@@ -24,9 +24,7 @@ This course has been greatly extended and reworked into a book that has been pub
 [online_stores]: http://rescuedbycode.com/about-the-book/#wheretobuy
 
 **Unix and Perl to the Rescue! A field guide for the life sciences (and other data-rich pursuits)**
-
-![Unix and Perl to the Rescue!](http://korflab.ucdavis.edu/Unix_and_Perl/book_cover.png)
-This primer will remain freely available, though we of course hope that if you find the primer useful, you will consider taking a look at our book. In the book we greatly expand on every subject that is in the primer, as well as covering many more topics. Some of these extra topics include more coverage of Unix and Perl, but we also devote sections to areas such as 'Data Management', 'Revision Control', and 'Code Beautification'. There are also many more jokes and geeky cultural references.
+![Unix and Perl to the Rescue!](http://korflab.ucdavis.edu/Unix_and_Perl/book_cover.png) This primer will remain freely available, though we of course hope that if you find the primer useful, you will consider taking a look at our book. In the book we greatly expand on every subject that is in the primer, as well as covering many more topics. Some of these extra topics include more coverage of Unix and Perl, but we also devote sections to areas such as 'Data Management', 'Revision Control', and 'Code Beautification'. There are also many more jokes and geeky cultural references.
 
 We have also created a website at <http://rescuedbycode.com/> to support both the primer and the book, and should there ever be a movie adaptation of the book (starring Tom Cruise as 'grep'?) I expect that you'll be able to find out about that on the website as well.
 
