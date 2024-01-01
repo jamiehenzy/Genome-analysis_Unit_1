@@ -25,38 +25,6 @@ Address: Genome Center, UC Davis, Davis, CA, 95616
 
 ![Creative commons license](http://korflab.ucdavis.edu/Unix_and_Perl/license.png "Creative commons license")
 
-
----
-
-# Contents
-
-+ [Shameless plug 1]
-+ [Shameless plug 2]
-+ [Introduction]
-+ [Preamble]
-+ [First steps]
-+ [Part 1] --- Unix - Learning the essentials
-+ [Part 2] --- Advanced Unix 
-+ [Part 3] --- Perl
-	+ [Project 0] --- Poisson
-	+ [Project 1] --- DNA composition
-	+ [Project 2] --- Descriptive statistics
-	+ [Project 3] --- Sequence shuffler
-	+ [Project 4] --- The name game
-	+ [Project 5] --- K-mer analysis
-	+ [Project 6] --- Codon usage of a GenBank file
-	+ [Project 7] --- Useful functions
-+ [Troubleshooting] --- Troubleshooting guide
-+ [Common errors] --- Table of common error messages
-+ [Version history] --- Version history of this document
-
-
-	
----
-
-
-# Shameless Plug 1 [Shameless plug 1]
-
 This course has been greatly extended and reworked into a book that has been published by Cambridge University Press. It is available to order on [Amazon.com][Amazon] and at many other [online stores][online_stores]. It is also available in various ebook formats.
 
 [Amazon]: https://www.amazon.com/gp/product/0521169828?tag=keithbradnamc-20
@@ -74,110 +42,16 @@ Enjoy!
 
 Keith Bradnam & Ian Korf May 2012
 
+## Why learn Unix commands?
 
----
+. . . Because most bioinformatics programs are written for Unix/Linux platforms, and Unix commands are very useful for data "wrangling" -- performing operations on large numbers of files to prepare them for input into a program. Everyone in this course has access to Northeastern's Discovery Cluster (DC), which operates on a Linux platform, so you can practice working with Unix commands while logged onto the DC. However, you'll need access to the command line (the bare bones interface on which you type Unix commands) in order to log onto the DC and to transfer files back and forth between your computer ('local') and the DC ('remote'). If you use a Mac, Unix commands can be run in the application Terminal, so you're all set. If you use a PC, however, you'll need to install a command line emulator. A free and very popular option is Putty, with the download and instructions here:
 
-# Shameless Plug 2 [Shameless plug 2]
-
-We are slowly â€”Â make that *very slowly* â€”Â in the process of writing a new book which will hopefully explain all the fun that can be had when using *Python* rather than Perl as your scriping language of choice for bioscience work.
-
-We've been posting some blog posts at <http://rescuedbycode.com> to chronicle some of our thoughts as we write this book; most notably on the differences between Perl and Python but also from issues arising in the differences in Python 2 and Python 3. You can find all such blog posts listed here in the post [Lessons learned while writing a book about programming](http://rescuedbycode.com/post/145222493368/lessons-learned-while-writing-a-book-about).
-
-
---- 
-
-# Introduction [Introduction]
-
-Advances in high-throughput biology have transformed modern biology into an incredibly data-rich science. Biologists who never thought they needed computer programming skills are now finding that using an Excel spreadsheet is simply not enough. Learning to program a computer can be a daunting task, but it is also incredibly worthwhile. You will not only improve your research, you will also open your mind to new ways of thinking and have a lot of fun.
-
-This course is designed for Biologists who want to learn how to program but never got around to it. Programming, like language or math, comes more naturally to some than others. But we all learn to read, write, add, subtract, etc., and we can all learn to program. Programming, more than just about any other skill, comes in waves of understanding. You will get stuck for a while and a little frustrated, but then suddenly you will see how a new concept aggregates a lot of seemingly disconnected information.  And then you will embrace the new way, and never imagine going back to the old way.
-
-As you are learning, if you are getting confused and discouraged, slow down and ask questions. You can contact us either in person, by email, or (preferably) on the associated [Unix and Perl for Biologists Google Group][Google group] The lessons build on each other, so do not skip ahead thinking you will return to the confusing concept at a later date.
-
-[Google Group]: https://groups.google.com/forum/?hl=en#!forum/rescuedbycode
-
-## Why Unix? [Why Unix]
-
-The [Unix operating system][Unix] has been around since 1969. Back then there was no such thing as a graphical user interface. You typed everything. It may seem archaic to use a keyboard to issue commands today, but it's much easier to automate keyboard tasks than mouse tasks. There are several variants of Unix (including [Linux][Linux]), though the differences do not matter much. Though you may not have noticed it, Apple has been using Unix as the underlying operating system on all of their computers since 2001.
-
-[Unix]: https://en.wikipedia.org/wiki/Unix
-[Linux]: https://en.wikipedia.org/wiki/Linux
-
-Increasingly, the raw output of biological research exists as _in silico_ data, usually in the form of large text files. Unix is particularly suited to working with such files and has  several powerful (and flexible) commands that can process your data for you. The real strength of learning Unix is that most of these commands can be combined in an almost unlimited fashion. So if you can learn just five Unix commands, you will be able to do a lot more than just five things.
-
-
-## Why Perl? [Why Perl]
-
-Perl is one of the most popular Unix programming languages. It doesn't matter much which language you learn first because once you know how one works, it is much easier to learn others. Among languages, there is often a distinction between interpreted (e.g. Perl, Python, Ruby) and compiled (e.g. C, C++, Java) languages. People often call interpreted programs scripts. It is generally easier to learn programming in a scripting language because you don't have to worry as much about variable types and memory allocation. The downside is the interpreted programs often run much slower than compiled ones (100-fold is common). But let's not get lost in petty details. Scripts are programs, scripting is programming, and computers can solve problems quickly regardless of the language.
-
-## Typeset Conventions [Typeset]
-
-All of the Unix and Perl code in these guides is written in constant-width font with line numbering. Here is an example with 3 lines:
-
-	1. for ($i = 0; $i < 10; $i++) { 
-	2.     print $i, "\n"; 
-	3. }
-
-
-Text you are meant to type into a terminal is indented in constant-width font without line numbering. Here is an
-example:
-
-	ls -lrh
-
-
-Sometimes a paragraph will include a reference to a Unix command, Perl function, or a file that you should be working with, Any such text will be in a constant-width, boxed font. E.g.
-
-Type the `pwd` command again.
-
-From time to time this documentation will contain [web links][] to pages that will help you find out more about certain Unix commands and Perl functions. Usually, the _first_ mention of a command or function will be a hyperlink to Wikipedia (for Unix commands) or to <http://perldoc.perl.org> (for Perl functions). Important or critical points will be styled like so:
-
->***This is an important point!***
-
-[web links]: https://en.wikipedia.org/wiki/Hyperlink
-
-
-## About the authors
-
-Keith Bradnam started out his academic career studying ecology. This involved lots of field trips and and throwing [quadrats][] around on windy hillsides. He was then lucky to be in the right place at the right time to do a Masters degree in Bioinformatics (at a time when nobody was very sure what bioinformatics was). From that point onwards he has spent most of his waking life sat a keyboard (often staring into a Unix terminal). A PhD studying eukaryotic genome evolution followed; this was made easier by the fact that only one genome had been completed at the time he started (this soon changed). After a brief stint working on an Arabidopsis genome database, he moved to working on the excellent model organism database [WormBase][] at the Wellcome Trust Sanger Institute. It was here that he first met Ian Korf and they bonded over a shared love of Macs, neatly written code, and English puddings. Ian then tried to run away and hide in California at the UC Davis [Genome Center][] but Keith tracked him down and joined his lab. Apart from doing research, he also gets to look after all the computers in the lab and teach the occasional class or two.  However, he would give it all up for the chance to be able to consistently beat Ian at foosball, but that seems unlikely to happen anytime soon. Keith still likes Macs and neatly written code, but now has a much harder job finding English puddings.
-
-[quadrats]: https://en.wikipedia.org/wiki/quadrat
-[WormBase]: http://www.wormbase.org
-[Genome Center]: http://www.genomecenter.ucdavis.edu
-
-Ian Korf believes that you can tell what a person will do with their life by examining their passions as a teen. Although he had no idea what a 'sequence analysis algorithm' was at 16, a deep curiosity about biological mechanisms and an obsession with writing/playing computer games is only a few bits away. Ian's first experience with bioinformatics came as a post-doc at Washington University (St. Louis) where he was a member of the Human Genome Project. He then went across the pond to the Sanger Centre for another post-doc. There he met Keith Bradnam, and found someone who truly understood the role of communication and presentation in science. Ian was somehow able to persuade Keith to join his new lab in Davis California, and this primer on Unix and Perl is but one of their hopefully useful contributions.
-
-
----
-
-
-# Preamble [Preamble]
-
-## What computers can run Perl?
-
-One of the main goals of this course is to learn Perl. As a programming language, Perl is platform agnostic. You can write (and run) Perl scripts on just about any computer. We will assume that >99% of the people who are reading this use either a Microsoft Windows PC, an Apple Mac, or one of the many Linux distributions that are available (Linux can be considered as a type of Unix, though this claim might offend the Linux purists reading this). A small proportion of you may be using some other type of dedicated Unix platform, such as Sun or SGI.  For the Perl examples, none of this matters. All of the Perl scripts in this course should work on any machine that you can install Perl on (if an example doesnâ€™t work then please let us know!).
-
-
-## What computers can run Unix?
-
-Unlike our Perl documentation, the Unix part of this course is not quite so portable to other types of computer. We decided that this course should include an introduction to Unix because most bioinformatics happens on Unix/Linux platforms; so it makes sense to learn how to run your Perl scripts in the context of a Unix operating system. If you read the Introduction, then you will know that all modern Mac computers are in fact Unix machines. This makes teaching Perl & Unix on a Mac a relatively straightforward proposition, though we are aware that this does not help those of you who use Windows. This is something that we will try to specifically address in later updates to this course. For now, we would like to point out that you can achieve a Unix-like environment on your Windows PC in one of two ways:
+[Putty]: https://www.puttygen.com/download-putty
 
 1. Install [Cygwin][] --- this provides a Linux-like environment on your PC, it is also free to download. There are some differences between Cygwin and other types of Unix which may mean that not every Unix example in this course works exactly as described, but overall it should be sufficient for you to learn the basics of Unix. 
 2. Install Linux by using [virtualization][] software --- there are many pieces of software that will now allow you effectively install one operating system within another operating system. Microsoft has itâ€™s own (free) [Virtual PC][] software, and here are some [guidelines for using Ubuntu Linux][Ubuntu on virtualization] with various virtualization software tools.
 
-[Cygwin]: http://www.cygwin.com
-[virtualization]: https://en.wikipedia.org/wiki/Platform_virtualization
-[Virtual PC]: https://www.microsoft.com/en-us/download/details.aspx?id=3702
-[Ubuntu on virtualization]: http://www.pcreview.co.uk/articles/Windows/Run_Linux_in_Windows/
-
-You should also be aware that there is a lot of variation within the world of Unix/Linux. Most commands will be the same, but the layout of the file system may look a little different. Hopefully our documentation should work for most types of Unix, but bear in mind it was written (and tested) with Appleâ€™s version of Unix.
-
-## Do I need to run this course from a USB drive?
-
-We originally developed this course to be taught in a computer classroom environment. Because of this we decided to put the entire course (documentation & data) on to a USB flash drive. One reason for doing this was so that people could take the flash drive home with them and continue working on their own computers.
-
-If you have your own computer which is capable of running a Unix/Linux environment then you might prefer to use that, rather than using a flash drive. If you have downloaded the course material, then after unpacking it you should have a directory called 'Unix_and_Perl_course'. You can either copy this directory (about 100 MB in size at the time of writing) to a flash drive or to any other directory within your Unix environment. Instructions in this document will assume that you are working on a flash drive on a Mac computer, so many of the Unix examples will not work exactly as written on other systems. In most cases you will just need to change the name of any directories the are used in the examples.
-
-In our examples, we assume that the course material is located on a flash drive that is named â€˜USBâ€™. If you run the course from your own flash-drive, you might find it easier to rename it to 'USB' as well, though you donâ€™t have to do this.
+Depending on the program you use, some commands will differ a bit, as will the layout of the file system. Be adaptable and don't let it throw you!
 
 ---
 
