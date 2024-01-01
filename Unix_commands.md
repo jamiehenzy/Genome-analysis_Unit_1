@@ -1,9 +1,8 @@
-
-
 ## Why learn Unix commands?
 
 . . . Because most bioinformatics programs are written for Unix/Linux platforms, and Unix commands are very useful for data "wrangling" -- performing operations on large numbers of files to prepare them for input into a program. Everyone in this course has access to Northeastern's Discovery Cluster (DC), which operates on a Linux platform, so you can practice working with Unix commands while logged onto the DC. However, you'll need access to the command line (the bare bones interface on which you type Unix commands) in order to log onto the DC and to transfer files back and forth between your computer ('local') and the DC ('remote'). If you use a Mac, Unix commands can be run in the application Terminal, so you're all set. If you use a PC, however, you'll need to install a command line emulator. A free and very popular option is Putty, with the download and instructions here:
 https://www.puttygen.com/download-putty
+Some nice screenshots and usage tips can be found here: https://it.engineering.oregonstate.edu/accessing-unix-server-using-putty-ssh#:~:text=PuTTY%20allows%20you%20to%20access,computer%2C%20on%20or%20off%20campus.
 
 Depending on the program you use, some commands will differ a bit, as will the layout of the file system. Be adaptable and don't let it throw you!
 
@@ -13,9 +12,6 @@ The material you'll work through is adapted from the following work:
 
 ## Keith Bradnam & Ian Korf 
 ## Version 3.1.2 --- October 2016
-
-<br><br><br>
-
 >Unix and Perl Primer for Biologists by Keith Bradnam & Ian Korf is licensed under a Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 License. Please send feedback, questions, money, or abuse to
 <keith.bradnam@icr.ac.uk> or <ifkorf@ucdavis.edu>. (c) 2016, all rights reserved.
 
@@ -30,7 +26,6 @@ This course has been greatly extended and reworked into a book that has been pub
 **Unix and Perl to the Rescue! A field guide for the life sciences (and other data-rich pursuits)**
 
 ![Unix and Perl to the Rescue!](http://korflab.ucdavis.edu/Unix_and_Perl/book_cover.png)
-
 This primer will remain freely available, though we of course hope that if you find the primer useful, you will consider taking a look at our book. In the book we greatly expand on every subject that is in the primer, as well as covering many more topics. Some of these extra topics include more coverage of Unix and Perl, but we also devote sections to areas such as 'Data Management', 'Revision Control', and 'Code Beautification'. There are also many more jokes and geeky cultural references.
 
 We have also created a website at <http://rescuedbycode.com/> to support both the primer and the book, and should there ever be a movie adaptation of the book (starring Tom Cruise as 'grep'?) I expect that you'll be able to find out about that on the website as well.
@@ -42,42 +37,26 @@ Keith Bradnam & Ian Korf May 2012
 
 # Part 1: Unix - Learning the essentials [Part 1]
 
-
 ## Introduction to Unix
 
 These exercises will (hopefully) teach you to become comfortable when working in the environment of the Unix terminal. Unix contains many hundred of commands but you will probably use just 10 or so to achieve most of what you want to do.
 
-You are probably used to working with programs like the Apple Finder or the Windows File Explorer to navigate around the hard drive of your computer. Some people are so used to using the mouse to move files, drag files to trash etc. that it can seem strange switching from this behavior to typing commands instead. Be patient, and try â€” as much as possible â€” to stay within world of the Unix terminal. Please make sure you complete and understand each task before moving on to the next one.
+You are probably used to working with programs like the Apple Finder or the Windows File Explorer to navigate around the hard drive of your computer. Some people are so used to using the mouse to move files, drag files to trash etc. that it can seem strange switching from this behavior to typing commands instead. Be patient, and try as much as possible to stay within world of the Unix terminal. Please make sure you complete and understand each task before moving on to the next one.
 
 --- 
 
-## First steps [First steps]
-
-The lessons from this point onwards will assume the following:
-
-1. You have downloaded the [Unix and Perl course material](http://korflab.ucdavis.edu/Unix_and_Perl/index.html) and copied it to a USB flash drive .
-2. The flash drive has been renamed to â€˜USBâ€™. 
-3. You have removed the downloaded files from your Desktop/Downloads folder (this is often the source of confusion when you have one copy on your USB drive and a separate copy on your Desktop) . 
-
----
-
 ## U1. The Terminal [U1]
 
-A â€˜terminalâ€™ is the common name for the program that does two main things. It allows you to type input to the computer (i.e. run programs, move/view files etc.) and it allows you to see output from those programs. All Unix machines will have a terminal program and on Apple computers, the terminal application is unsurprisingly named â€˜Terminalâ€™.
+A terminal is the common name for the program that does two main things. It allows you to type input to the computer (i.e. run programs, move/view files etc.) and it allows you to see output from those programs. If you're working on a Mac, you can open the application known as Terminal OR you can log onto the Discovery cluster and work from your directory there. If you're working on a PC, you'll need to log onto the Discovery Cluster through your emulator (e.g. Putty).
 
 #### Task U1.1 [U1.1]
-Use the â€˜Spotlightâ€™ search tool (the little magnifying glass in the top right of the menu bar) to find, and then launch, Appleâ€™s Terminal application: 
-
-![Spotlight][]
-
-
-You should now see something that looks like the following (any text that appears inside your terminal window will look different):
+Once you are in your DC directory or on Terminal, you should see something that looks like the following (any text that appears inside your terminal window will look different):
 
 ![Terminal application][](http://korflab.ucdavis.edu/Unix_and_Perl/terminal.png)
 
 Before we go any further, you should note that you can:
 
-* make the text larger/smaller (hold down â€˜commandâ€™ and either â€˜+â€™ or â€˜â€“â€™) 
+* make the text larger/smaller (hold down command and either + or -) 
 * resize the window (this will often be necessary) 
 * have multiple terminal windows on screen (see the â€˜Shellâ€™ menu) 
 * have multiple tabs open within each window (again see the â€˜Shellâ€™ menu)
