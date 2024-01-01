@@ -31,8 +31,8 @@ Keith Bradnam & Ian Korf May 2012
 ## Why learn Unix commands?
 
 . . . Because most bioinformatics programs are written for Unix/Linux platforms, and Unix commands are very useful for data "wrangling" -- performing operations on large numbers of files to prepare them for input into a program. Everyone in this course has access to Northeastern's Discovery Cluster (DC), which operates on a Linux platform, so you can practice working with Unix commands while logged onto the DC. However, you'll need access to the command line (the bare bones interface on which you type Unix commands) in order to log onto the DC and to transfer files back and forth between your computer ('local') and the DC ('remote'). If you use a Mac, Unix commands can be run in the application Terminal, so you're all set. If you use a PC, however, you'll need to install a command line emulator. A free and very popular option is Putty, with the download and instructions here:
-
-![Putty]: https://www.puttygen.com/download-putty
+[Amazon]: https://www.amazon.com/gp/product/0521169828?tag=keithbradnamc-20
+[Putty]: https://www.puttygen.com/download-putty
 
 Depending on the program you use, some commands will differ a bit, as will the layout of the file system. Be adaptable and don't let it throw you!
 
