@@ -80,7 +80,7 @@ You can follow people on GitHub to receive notifications about their activity an
 To learn more about following users, read ["Following People"](https://docs.github.com/en/github/getting-started-with-github/following-people).
 
 ## 📝 Assignment 1: Gitty up
-* Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
+* Create your profile README. Let the world know a little bit about you! What college courses have you taken so far? What are you interested in learning? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
 * Watch the following video and start building a rough draft of your portfolio, which you'll add to throughout the course.
 * [Shaw Talebi on how to make a portfolio](https://www.youtube.com/watch?v=D9CLhQdLp8w&feature=youtu.be) 
 
