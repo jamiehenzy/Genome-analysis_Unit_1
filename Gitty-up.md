@@ -1,6 +1,6 @@
 # :wave: The Basics of GitHub 
 
-The goal of this assignment is to give you a brief introduction to GitHub so that you can get started building your portfolio. Using GitHub to create and maintain your portfolio will 1) teach you how to use GitHub – a useful skill for anyone interested in working with data; 2) showcase your skills and projects when applying for co-ops, lab positions, or graduate or professional schools; 3) provide you with hours of fun? Don't worry: many of the terms won't really mean anything until you jump in and start building your own site. Think of it as an adventure. 🚀
+The goal of this assignment is to give you a brief introduction to GitHub so that you can get started building your portfolio. Using GitHub to create and maintain your portfolio will 1) teach you how to use GitHub – a useful skill for anyone interested in working with data; 2) showcase your skills and projects when applying for co-ops, lab positions, or graduate or professional schools; 3) provide you with hours of fun? Don't worry: many of the terms won't really mean anything until you jump in and start using it. Think of it as an adventure. 🚀
 
 ## :octocat: Git and GitHub
 
