@@ -80,13 +80,9 @@ To learn  more about starring repositories, read ["Saving Repositories with Star
 You can follow people on GitHub to receive notifications about their activity and discover projects in their communities. When you follow a user, their public GitHub activity will show up on your dashboard so you can see all the cool things they are working on. 
 To learn more about following users, read ["Following People"](https://docs.github.com/en/github/getting-started-with-github/following-people).
 
-## 📝 Assignment 1: Baby steps
-* Open a pull request and let me know your favorite food.  
-* Create a new markdown file in this repository. In it, let me know what you learned and what you are still confused about. Experiment with different styles!
-
-## 📝 Assignment 2: Start building a GitHub portfolio to showcase your skills!
+## 📝 Assignment 1: Gitty up
 * Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
-* Watch the following video and build a rough draft of your portfolio, which you'll add to throughout the course.
+* Watch the following video and start building a rough draft of your portfolio, which you'll add to throughout the course.
 * [Shaw Talebi on how to make a portfolio](https://www.youtube.com/watch?v=D9CLhQdLp8w&feature=youtu.be) 
 
 ## 📚  Resources 
