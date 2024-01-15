@@ -1,1 +1,11 @@
-["Git started"](https://www.w3schools.com/git/git_getstarted). 
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Below is a very well explained tutorial on the basics of using git and GitHub.</h1>
+
+<a href="https://www.w3schools.com/git/git_getstarted">Get started here.</a> 
+
+</body>
+</html>
