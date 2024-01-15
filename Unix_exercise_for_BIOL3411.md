@@ -10,4 +10,4 @@ When can you check the box? When you have:
 
 ~ successfully transferred the files to your folder on Discovery Cluster (remember to transfer to your directory under the courses folder /courses/BIOL3411.202430/students/)
 
-Enjoy, and post on the "Yeehaw" discussion forum on Canvas when you've done it!
+Enjoy, and post on the "Yeehaw" discussion forum on Canvas when you've succeeded!
