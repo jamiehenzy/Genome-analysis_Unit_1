@@ -2,7 +2,7 @@
 
 [https://www.w3schools.com/git/git_getstarted.asp?remote=github](https://www.w3schools.com/git/git_getstarted.asp?remote=github)
 
-## When can you check the box on your Deliverable list? When you have:
+## When can you check the box on your Deliverables list? When you have:
 
 ~ completed Git Get Started through Git Send Pull Request sections of the tutorial
 
