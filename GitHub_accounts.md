@@ -25,3 +25,5 @@
 [https://github.com/dmbreen](https://github.com/dmbreen)
 
 [https://github.com/devyawni](https://github.com/devyawni)
+
+[https://github.com/mimisick](https://github.com/mimisick)
