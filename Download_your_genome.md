@@ -4,11 +4,11 @@ Log onto Discovery and cd to your “scratch” account:
 
 Download the NCBI command line tools (datasets and dataformat)
 
-> curl -o datasets 'https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/datasets'
+> curl -o datasets `https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/datasets`
 
 Then:
 
-> curl -o dataformat 'https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/dataformat'
+> curl -o dataformat `https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/dataformat`
 
 Make them executable: 
 
