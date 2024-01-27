@@ -8,6 +8,6 @@
 
 ~ saved your sessions and named them according to best practices
 
-~ successfully transferred the files to your folder on Discovery Cluster (remember to transfer to your directory under the courses folder /courses/BIOL3411.202430/students/<username>)
+~ successfully transferred the files to your folder on Discovery Cluster (remember to transfer to your directory under the courses folder /courses/BIOL3411.202430/students/`<username>`)
 
 ~ read Gitty-up.md page and completed short assignment at bottom
