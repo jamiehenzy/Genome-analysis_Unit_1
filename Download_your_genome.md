@@ -1,6 +1,6 @@
 Log onto Discovery and cd to your “scratch” account:
 
-> cd /scratch/<username>
+> cd /scratch/`<username>`
 
 Download the NCBI command line tools (datasets and dataformat)
 
