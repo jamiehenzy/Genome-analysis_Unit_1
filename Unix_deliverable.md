@@ -1,8 +1,8 @@
-## Unix tutorial for Unit 1: Deliverables
+# Unix tutorial for Unit 1: Deliverables
 
 [Unix tutorial from Griffith Lab](https://rnabio.org/module-00-setup/0000/08/01/Unix/)
 
-# How to complete the Unix deliverable:
+## How to complete the Unix deliverable:
 
 Work through all of the Unix exercises (1 - 28), typing the commands as directed into your terminal. 
 
