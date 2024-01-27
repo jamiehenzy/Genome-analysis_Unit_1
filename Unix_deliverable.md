@@ -26,7 +26,7 @@ Refer to Session_2.pdf on Canvas, slide 18, for instructions on how to transfer 
 
 From my computer Terminal or Mobaxterm (do not log onto DC):
 
-> rsync -a ~/Desktop/unix_exer.txt `jhenzy@xfer.discovery.neu.edu`:/courses/BIOL3411.202430/students/jhenzy/assignments
+> rsync -a ~/Desktop/unix_exer.txt `jhenzy@xfer.discovery.neu.edu:/courses/BIOL3411.202430/students/jhenzy/assignments`
 
 Eh voilà! Try it out and if it works, post a message on the "Yeehaw!" Discussion board! 
 
