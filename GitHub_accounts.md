@@ -12,8 +12,6 @@
 
 [https://github.com/mehamacwan](https://github.com/mehamacwan)
 
-[https://github.com/cartermcc](https://github.com/cartermcc)
-
 [https://github.com/mayaali6](https://github.com/mayaali6)
 
 [https://github.com/snehakini6](https://github.com/snehakini6)
@@ -25,5 +23,3 @@
 [https://github.com/dmbreen](https://github.com/dmbreen)
 
 [https://github.com/devyawni](https://github.com/devyawni)
-
-[https://github.com/mimisick](https://github.com/mimisick)
