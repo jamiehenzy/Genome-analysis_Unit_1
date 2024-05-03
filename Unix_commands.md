@@ -231,15 +231,16 @@ If we want to make a new directory (e.g. to store some work related data), we ca
 `mkdir` command:
 
 	$ cd /Users/yourname/Desktop
-	$ mkdir Work
+	$ mkdir unix
 	$ ls
-	Items	Data    Code   Misc	Work 
+	Items	Data    Code   Misc	unix
+ 	$ cd /Users/yourname/Desktop/unix
 	$ mkdir Temp1 
 	$ cd Temp1 
 	$ mkdir Temp2 
 	$ cd Temp2 
 	$ pwd 
-	/Users/yourname/Desktop/Temp1/Temp2
+	/Users/yourname/Desktop/unix/Temp1/Temp2
 
 In the last example we created the two temp directories in two separate steps. If we had used the `-p` option of the `mkdir` command we could have done this in one step. E.g.
 
@@ -247,19 +248,21 @@ In the last example we created the two temp directories in two separate steps. I
 
 #### Task U12.1
 Practice creating some directories and navigating between them using the `cd` command. Try changing
-directories using both the _absolute_ as well as the _relative_ path (see section [U8][]).
+directories using both the _absolute_ as well as the _relative_ path.
 
 ---
 
 ## U13: Time to tidy up
 
-We now have a few (empty) directories that we should remove. To do this use the `rmdir` command, this will only remove empty directories so it is quite safe to use. If you want to know more about this command (or any Unix command), then remember that you can just look at its man page.
+We now have a few (empty) directories that we should remove. To do this use the `rmdir` command. This will only remove empty directories so it is quite safe to use. If you want to know more about this command (or any Unix command), then remember that you can just look at its man page.
 
 	$ cd /Users/yourname/Desktop
-	$ rmdir Work
+	$ rmdir unix
+
+Why the error on the `rmdir` command? If a directory contains files or other directories, you need to use `rm -r` instead. Try it!
 
 #### Task U13.1
-Remove the remaining empty Temp directories that you have created.
+Use `cd` to navigate to your Downloads directory. Remove an unwanted file.
 
 ---
 
@@ -276,7 +279,7 @@ pressing tab _twice_ will show you all possible completions. This trick can save
 tab-completion then you must be a masochist.
 
 #### Task U14.1
-Navigate to your home directory, and then use the `cd` command to change to the `/Users/yourname/Desktop/Work` directory. Use tab completion for each directory name.
+Navigate to your home directory, and again make a "unix" directory. Then use the `cd` command to change to the `/Users/yourname/Desktop/unix` directory. Use tab completion for each directory name.
 
 Another great time-saver is that Unix stores a list of all the commands that you have typed in each login session. You can access this list by using the `history` command or more simply by using the up and down arrows to access anything from your history. So if you type a long command but make a mistake, press the up arrow and then you can use the left and right arrows to move the cursor in order to make a change.
 
@@ -286,7 +289,7 @@ Another great time-saver is that Unix stores a list of all the commands that you
 
 The following sections will deal with Unix commands that help us to work with files, i.e. copy files to/from places, move files, rename files, remove files, and most importantly, look at files. Remember, we want to be able to do all of these things without leaving the terminal. First, we need to have some files to play with. The Unix command `touch` will let us create a new, empty file. The touch command does other things too, but for now we just want a couple of files to work with.
 
-	$ cd /Users/yourname/Desktop/Work
+	$ cd /Users/yourname/Desktop/unix
 	$ touch heaven.txt 
 	$ touch earth.txt 
 	$ ls 
@@ -327,9 +330,10 @@ Then type either `ls f?t` or `ls f*t` and see what happens. The ? character is a
 
 ## U17: Renaming files
 
-In the earlier example, the destination for the `mv` command was a directory name (Temp). So we moved a file from its source location to a target location ('source' and 'target' are important concepts for many Unix commands). But note that the target could have also been a (different) file name, rather than a directory. E.g. let's make a new file and move it whilst renaming it at the same time:
+In the earlier example, the destination for the `mv` command was a directory name (Temp). So we moved a file from its source location to a target location ('source' and 'target' are important concepts for many Unix commands). But note that the target could have also been a (different) file name, rather than a directory. E.g. let's make a new file in Desktop and move it whilst renaming it at the same time:
 
-	$ touch rags 
+	$ cd ..	
+ 	$ touch rags 
 	$ ls 
 	Temp  rags 
 	$ mv rags Temp/riches 
@@ -383,59 +387,59 @@ In the first example, we change directories just to run the ls command, and then
 ## U20: To slash or not to slash?
 
 #### Task U20.1
-Run the following two commands and compare the output
+Run the command to return to your home directory.
 
-	$ ls Documentation
+From your home directory, run the following commands:
 
-	$ ls Documentation/
+	$ ls Desktop
 
-The two examples are not quite identical, but they produce identical output. So does the trailing slash character in the second example matter? Well not really. In both cases we have a directory named â€˜Documentationâ€™ and it is optional as to whether you include the trailing slash. When you tab complete any Unix directory name, you will find that a trailing slash character is automatically added for you. This becomes useful when that directory contains subdirectories which you also want to tab complete.
+	$ ls Desktop/
 
-I.e. imagine if you had to type the following (to access a buried directory â€˜gggâ€™) and tab-completion _didnâ€™t_ add the trailing slash characters. Youâ€™d have to type the seven slashes yourself.
+The two examples are not quite identical, but they produce identical output. So does the trailing slash character in the second example matter? Well not really. In both cases we have a directory named Desktop and it is optional as to whether you include the trailing slash. When you tab complete any Unix directory name, you will find that a trailing slash character is automatically added for you. This becomes useful when that directory contains subdirectories which you also want to tab complete.
+
+I.e. imagine if you had to type the following (to access a buried directory "ggg") and tab-completion _didn't_ add the trailing slash characters. You'd have to type the seven slashes yourself.
 
 	$ cd aaa/bbb/ccc/ddd/eee/fff/ggg/
 	
 ---	
 	
-## U21: The most dangerous Unix command you will ever learn! [U21]
+## U21: The most dangerous Unix command you will ever learn!
 
-You've seen how to remove a directory with the `rmdir` command, but `rmdir` wonâ€™t remove directories if they contain any files. So how can we remove the files we have created (in /Volumes/USB/Unix_and_Perl_course/Temp)? In order to do this, we will have to use the [rm][] (remove) command.
+You've seen how to remove a directory with the `rmdir` command, but `rmdir` won't remove directories if they contain any files. So how can we remove the files we have created (in /Users/yourname/Desktop/Temp)? In order to do this, we will have to use the `rm` (remove) command.
 
 >***Please read the next section VERY carefully. Misuse of the rm command can lead to needless death & destruction*** 
 
-Potentially, `rm` is a very dangerous command; if you delete something with `rm`, you will not get it back! It does not go into the trash or recycle can, it is permanently removed. It is possible to delete everything in your home directory (all directories and subdirectories) with `rm`, that is why it is such a dangerous command.
+Potentially, `rm` is a very dangerous command; if you delete something with `rm`, you will not get it back! It does **not** go into the trash or recycle can, it is permanently removed. It is possible to delete everything in your home directory (all directories and subdirectories) with `rm`, that is why it is such a dangerous command.
 
-Let me repeat that last part again. It is possible to delete EVERY file you have ever created with the `rm` command. Are you scared yet? You should be. Luckily there is a way of making `rm` a little bit safer. We can use it with the `-i` command-line option which will ask for confirmation before deleting anything:
+Let me repeat that last part again. **It is possible to delete EVERY file you have ever created with the `rm` command.** Are you scared yet? You should be. Luckily there is a way of making `rm` a little bit safer. We can use it with the `-i` command-line option which will ask for confirmation before deleting anything:
 
-	$ pwd 
-	/Volumes/USB/Unix_and_Perl_course/Temp 
+	$ cd /Users/jamiehenzy/Desktop/unix 
+	$ touch dog.txt cat.txt
 	$ ls 
-	Temp2		Temp3		earth.txt	heaven.txt	rags 
-	$ rm -i earth.txt 
+	dog.txt	    cat.txt  owl.txt
+	$ rm -i dog.txt 
 	remove earth.txt? y 
-	$ rm -i heaven.txt 
-	remove heaven.txt? y
+	$ rm -i dog.txt 
+	remove cat.txt? y
 
 We could have simplified this step by using a wild-card (e.g. `rm -i *.txt`).
 
-#### Task U21.1 [U21.1]
-Remove the last file in the Temp directory (â€˜ragsâ€™) and then remove the two empty directories (Temp 2 & Temp3).
-
-[rm]: https://en.wikipedia.org/wiki/Rm_(Unix)
+#### Task U21.1
+Remove the remaining file from the "/Users/yourname/Desktop/unix" directory. Now navigate to either your Desktop or Downloads folder and remove any files you don't need. Use a wild-card when appropriate. For example, I frequently have screenshots pile up on my Desktop, which I can quickly remove with `rm scree*`.
 
 ---
 
-## U22: Go forth and multiply [U22]
+## U22: Go forth and multiply
 
-Copying files with the [cp][] (copy) command is very similar to moving them. Remember to always specify a source and a target location. Letâ€™s create a new file and make a copy of it.
+Copying files with the `cp` (copy) command is very similar to moving them. Remember to always specify a _source_ and a _target_ location. While in your unix folder, create a new file and make a copy of it.
 
 	$ touch file1 
 	$ cp file1 file2 
 	$ ls 
 	file1	file2
 
-What if we wanted to copy files from a different directory to our current directory? Letâ€™s put a file in our home
-directory (specified by â€˜~â€™ remember) and copy it to the USB drive:
+What if we wanted to copy files from a different directory to our current directory? Let's put a file in our home
+directory and copy it to the unix directory:
 
 	$ touch ~/file3 
 	$ ls 
@@ -451,17 +455,17 @@ This last step introduces another new concept. In Unix, the current directory ca
 
 In this case, using the dot is somewhat pointless because `ls` will already list the contents of the current directory by default. Also note again how the trailing slash is optional.
 
-Letâ€™s try the opposite situation and copy these files back to the home directory (even though one of them is already there). The default behavior of copy is to overwrite (without warning) files that have the same name, so be careful.
+Let's try the opposite situation and copy these files back to the home directory (even though one of them is already there). The default behavior of copy is to overwrite (without warning) files that have the same name, so be careful.
 
 	$ cp file* ~/
 
-Based on what we have already covered, do you think the trailing slash in â€˜~/â€™ is necessary? 
+Based on what we have already covered, do you think the trailing slash in `~/` is necessary? 
 
 ---
 
-## U23: Going deeper and deeper [U23]
+## U23: Going deeper and deeper
 
-The `cp` command also allows us (with the use of a command-line option) to copy entire directories (also note how the `ls` command in this example is used to specify multiple directories):
+The `cp` command also allows us (with the use of a command-line option) to copy entire directories (also note how the `ls` command in this example is used to specify multiple directories). From within the unix directory:
 
 	$ mkdir Storage 
 	$ mv file* Storage/ 
@@ -475,16 +479,14 @@ The `cp` command also allows us (with the use of a command-line option) to copy 
 	Storage2: 
 	file1	file2	file3
 
-#### Task U23.1 [U23.1]
-The `-R` option means â€˜copy recursivelyâ€™, many other Unix commands also have a similar option. See what happens if you donâ€™t include the `-R` option. Weâ€™ve finished with all of these temporary files now. Make sure you remove the Temp directory and its contents (remember to always use `rm -i`).
-
-[cp]: https://en.wikipedia.org/wiki/Cp_(Unix)
+#### Task U23.1
+The `-R` option means "copy recursively". Many other Unix commands also have a similar option. See what happens if you don't include the `-R` option. We've finished with all of these temporary files now. Make sure you remove the unix directory and its contents (remember to always use `rm -i`).
 
 ---
 
-## U24: When things go wrong [U24]
+## U24: When things go wrong
 
-At this point in the course, you may have tried typing some of these commands and have found that things did not work as expected. Some people will then assume that the computer doesnâ€™t like them and that it is being deliberately mischievous. The more likely explanation is that you made a typing error. Maybe you have seen one the following error messages:
+At this point in the course, you may have tried typing some of these commands and have found that things did not work as expected. Some people will then assume that the computer doesn't like them and that it is being deliberately mischievous. The more likely explanation is that you made a typing error. Maybe you have seen one the following error messages:
 
 	$ ls Codee 
 	ls: Codee: No such file or directory
@@ -497,9 +499,9 @@ In both cases, we included a deliberate typo when specifying the name of the dir
 
 ---
 
-## U25: Less is more [U25]
+## U25: Less is more
 
-So far we have covered listing the contents of directories and moving/copying/deleting either files and/or directories. Now we will quickly cover how you can look at files; in Unix the [less][less command] command lets you view (but not edit) text files. Letâ€™s take a look at a file of _Arabidopsis thaliana_ protein sequences:
+So far we have covered listing the contents of directories and moving/copying/deleting either files and/or directories. Now we will quickly cover how you can look at files; in Unix the `less` command lets you view (but not edit) text files. Let's take a look at a file of _Arabidopsis thaliana_ protein sequences. First you'll need to download the "At_proteins.fasta" file from Genome-analysis_Unit_1 repository on GitHub. Then navigate to your Downloads folder and, after using `ls` to check that the file is there:
 
 	$ less Data/Arabidopsis/At_proteins.fasta
 
