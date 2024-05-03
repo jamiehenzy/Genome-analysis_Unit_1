@@ -503,17 +503,18 @@ In both cases, we included a deliberate typo when specifying the name of the dir
 
 So far we have covered listing the contents of directories and moving/copying/deleting either files and/or directories. Now we will quickly cover how you can look at files; in Unix the `less` command lets you view (but not edit) text files. Let's take a look at a file of _Arabidopsis thaliana_ protein sequences. First you'll need to download the "At_proteins.fasta" file from Genome-analysis_Unit_1 repository on GitHub. Then navigate to your Downloads folder and, after using `ls` to check that the file is there:
 
-	$ less Data/Arabidopsis/At_proteins.fasta
+	$ less At_proteins.fasta
 
 When you are using less, you can bring up a page of help commands by pressing `h`, scroll forward a page by pressing `space`, or go forward or backwards one line at a time by pressing `j` or `k`. To exit less, press `q` (for quit). The `less` program also does about a million other useful things (including text searching).
 
-[less command]: https://en.wikipedia.org/wiki/Less_(Unix)
+#### Task U25.1
+Make a new directory called Data in your Desktop. Move the At_proteins.fasta file to the Data directory. Show that it is there using the `ls` command.
 
 ---
 
-## U26: Directory enquiries [U26]
+## U26: Directory enquiries
 
-When you have a directory containing a mixture of files and directories, it is not often clear which is which. One solution is to use `ls -l` which will put a â€˜dâ€™ at the start of each line of output for items which are directories. A better solution is to use `ls -p`. This command simply adds a trailing slash character to those items which are directories. Compare the following:
+When you have a directory containing a mixture of files and directories, it is not often clear which are files and which, directories. One solution is to use `ls -l` which will put a **d** at the start of each line of output for items which are directories. A better solution is to use `ls -p`. This command simply adds a trailing slash character to those items which are directories. Compare the following:
 
 	$ ls 
 	Applications	Data	file1 	Code	Documentation	file2
@@ -521,83 +522,83 @@ When you have a directory containing a mixture of files and directories, it is n
 	$ ls -p 
 	Applications/	Data/	file1 	Code/	Documentation/	file2
 
-Hopefully, youâ€™ll agree that the second example makes things a little clearer. You can also do things like always capitalizing directory names (like I have done) but ideally we would suggest that you always use `ls -p`. If this sounds a bit of a pain, then it is. Ideally you want to be able to make `ls -p` the default behavior for `ls`. Luckily, there is a way of doing this by using Unix [aliases][]. Itâ€™s very easy to create an alias:
+Hopefully, you'll agree that the second example makes things a little clearer. You can also do things like always capitalizing directory names (like I have done) but ideally we would suggest that you always use `ls -p`. If this sounds a bit of a pain, then it is. Ideally you want to be able to make `ls -p` the default behavior for `ls`. Luckily, there is a way of doing this by using Unix aliases. It's very easy to create an alias:
 
 	$ alias ls='ls -p' 
 	$ ls 
 	Applications/	Data/	file1 	Code/	Documentation/	file2
 
-If you have trouble remembering what some of these very short Unix commands do, then aliases allow you to use human-readable alternatives. I.e. you could make a â€˜copyâ€™ alias for the cp commandâ€™ or even make â€˜list_files_sorted_by_dateâ€™ perform the `ls -lt` command. Note that aliases do not replace the original command. It can be dangerous to use the name of an existing command as an alias for a different command. I.e. you could make an `rm` alias that put files to a â€˜trashâ€™ directory by using the `mv` command. This might work for you, but what if you start working on someone elseâ€™s machine who doesnâ€™t have that alias? Or what if someone else starts working on your machine?
+If you have trouble remembering what some of these very short Unix commands do, then aliases allow you to use human-readable alternatives. I.e. you could make a "copy" alias for the cp command or even make "list_files_sorted_by_date" perform the `ls -lt` command. Note that aliases do not replace the original command. It can be dangerous to use the name of an existing command as an alias for a different command. I.e. you could make an `rm` alias that put files to a "trash" directory by using the `mv` command. This might work for you, but what if you start working on someone else's machine who doesn't have that alias? Or what if someone else starts working on your machine?
 
-#### Task U26.1 [U26.1]
+#### Task U26.1
 Create an alias such that typing `rm` will always invoke `rm -i`. Try running the alias command on its own to see what happens. Now open a new terminal window (or a new tab) and try running your `ls` alias. What happens?
-
-[aliases]: https://en.wikipedia.org/wiki/Alias_(command)
 
 ---
 
-## U27: Fire the editor [U27]
+## U27: Fire the editor
 
-The problem with aliases is that they only exist in the current terminal session. Once you log out, or use a new terminal window, then youâ€™ll have to retype the alias. Fortunately though, there is a way of storing settings like these. To do this, we need to be able to create a configuration file and this requires using a text editor. We could use a program like TextEdit to do this (or even Microsoft Word), but as this is a Unix course,  we will use a simple Unix editor called [`][]. Letâ€™s create a file called profile:
+The problem with aliases is that they only exist in the current terminal session. Once you log out, or use a new terminal window, then you'll have to retype the alias. Fortunately though, there is a way of storing settings like these. To do this, we need to be able to create a configuration file and this requires using a text editor. We could use a program like TextEdit to do this (or even Microsoft Word), but as this is a Unix course,  we will use a simple Unix editor called nano. Let's create a file called profile:
 
-	$ cd /Volumes/USB/Unix_and_Perl_course 
+	$ cd ~ 
 	$ nano profile
 
 You should see the following appear in your terminal:
 
-![the nano editor](http://korflab.ucdavis.edu/Unix_and_Perl/nano.png)
+![alt text](https://github.com/jamiehenzy/Genome-analysis_Unit_1/blob/assets/nano.png)
 
-The bottom of the nano window shows you a list of simple commands which are all accessible by typing â€˜Controlâ€™ plus a letter. E.g. Control + X exits the program.
+The bottom of the nano window shows you a list of simple commands that are all accessible by typing "Control" plus a letter. E.g. Control + X exits the program. "Control" is often represented as \^, or in this case \^X.
 
-#### Task U27.1 [U27.1]
-Type the following text in the editor and then save it (Control + O). Nano will ask if you want to â€˜save the modified bufferâ€™ and then ask if you want to keep the same name. Then exit nano (Control + X) and use `less` to confirm that the profile file contains the text you added.
+#### Task U27.1
+Type the following text in the editor and then save it (\^O). Nano will ask if you want to "save the modified buffer" and then ask if you want to keep the same name. Then exit nano (\^X) and use `less` to confirm that the profile file contains the text you added.
 
 	# some useful command line short-cuts 
 	alias ls='ls -p' 
 	alias rm='rm -i'
 
-Now you have successfully created a configuration file (called â€˜profileâ€™) which contains two aliases. The first line that starts with a hash (#) is a comment, these are just notes that you can add to explain what the other lines are doing. But how do you get Unix to recognize the contents of this file? The [source][] command tells Unix to read the contents of a file and treat it as a series of Unix commands (but it will ignore any comments).
+Now you have successfully created a configuration file (called "profile") which contains two aliases. The first line that starts with a hash (#) is a comment, these are just notes that you can add to explain what the other lines are doing. But how do you get Unix to recognize the contents of this file? The `source` command tells Unix to read the contents of a file and treat it as a series of Unix commands (but it will ignore any comments).
 
-#### Task U27.2 [U27.2]
+#### Task U27.2
 Open a new terminal window or tab (to ensure that any aliases will not work) and then type the following (make sure you first change to the correct directory):
 
 	$ source profile
 
 Now try the `ls` command to see if the output looks different. Next, use `touch` to make a new file and then try deleting it with the `rm` command. Are the aliases working?
 
-[nano]: https://en.wikipedia.org/wiki/Nano_(text_editor)
-[source]: https://en.wikipedia.org/wiki/Source_(command)
+---
+
+## U28: Hidden treasure
+
+In addition to adding aliases, profile files in Unix are very useful for many other reasons. Profile files are hidden files (or "dot" files). If a filename starts with a dot, Unix will treat it as a hidden file. To see it, you  can use `ls -a` which lists all hidden files (there may be several more files that appear) in addition to the other files.
+
+#### Task U28.1
+Navigate to your home directory. Use the appropriate command to list all files including hidden files. 
+
+If any files appear that has "profile" in the name, use the `less` command to look at the contents. Any such file in your _home_ directory will be automatically read every time you open a new terminal. If you want to use the profile you created above, you have to remember to use the command `source profile` whenever you open a new terminal session. If you're in a different directory when you run the command, remember to alter the path accordingly.
+
+#### Task U28.2
+Open a new Terminal session and navigate to your Downloads folder (or any other folder besides your home directory). 
+
+Use the `ls` command to see the contents of the folder.
+
+Now use the `source profile` command, but specifying the correct path to "profile" (since you are not in your home directory where "profile" lives).
+
+Again type the `ls` command. The output should now look different.
+
 
 ---
 
-## U28: Hidden treasure [U28]
+## U29: Sticking to the script
 
-In addition to adding aliases, profile files in Unix are very useful for many other reasons. We have actually already created a profile for you. Itâ€™s in /Volumes/USB/Unix_and_Perl_course but you probably wonâ€™t have seen it yet. Thatâ€™s because it is a hidden file named â€˜.profileâ€™ (dot profile). If a filename starts with a dot, Unix will treat it as a hidden file. To see it, you  can use `ls -a` which lists all hidden files (there may be several more files that appear).
+Unix can also be used as a programming language just like Python. Depending on what you want to do, a Unix script might solve all your problems and mean that you don't really need to learn Python at all.
 
-#### Task U28.1 [U28.1]
-Use `less` to look at the profile file that we have created. See if you can understand what all the lines mean (any lines that start with a # are just comments). Use `source` to read this file. See how this changes the behavior of typing `cd` on its own. You can now delete the profile file that you made earlier, from now on we will use the .profile file.
+So how do you make a Unix script (which are commonly called "shell scripts")? At the simplest level, we just write one or more  Unix commands to a file and then treat that file as if it was any other Unix command or program.
 
-If you have a .profile file in your _home_ directory then it will be automatically read every time you open a new terminal. A problem for this class is your home directories are wiped each day, so we canâ€™t store files on the computer (which is why we are using the USB drive). So for this course we have to do a bit of extra work.
-
->***Remember to type:***  
-***source /Volumes/USB/Unix_and_Perl_course/.profile***  
-***every time you use a new terminal window***
-
----
-
-## U29: Sticking to the script [U29]
-
-Unix can also be used as a programming language just like Perl. Depending on what you want to do, a Unix script might solve all your problems and mean that you donâ€™t really need to learn Perl at all.
-
-So how do you make a Unix script (which are commonly called â€˜shell scriptsâ€™)? At the simplest level, we just write one or more  Unix commands to a file and then treat that file as if it was any other Unix command or program.
-
-#### Task U29.1 [U29.1]
-Copy the following two lines to a file (using `nano`). Name that file hello.sh (shell scripts are typically given a .sh extension) and **make sure that you save this file in /Volumes/USB/Unix_and_Perl_course/Code**.
-
+#### Task U29.1
+Make a new directory in Desktop named "Code". Witin the Code directory, create a nano file named "hello.sh" containing the following two lines: 
 	# my first Unix shell script 
 	echo "Hello World"
 
-When you have done that, simply type â€˜hello.shâ€™ and see what happens. If you have previously run `source .profile` then you should be able to run â€˜hello.shâ€™ from any directory that you navigate to. If it worked, then it should have printed â€˜Hello worldâ€™. This very simple script uses the Unix command [echo][] which just prints output to the screen. Also note the comment that precedes the `echo` command, it is a good habit to add explanatory comments.
+When you have done that, simply type `hello.sh` and see what happens. If you have previously run `source .profile` then you should be able to run â€˜hello.shâ€™ from any directory that you navigate to. If it worked, then it should have printed â€˜Hello worldâ€™. This very simple script uses the Unix command [echo][] which just prints output to the screen. Also note the comment that precedes the `echo` command, it is a good habit to add explanatory comments.
 
 #### Task U29.2 [U29.2]
 Try moving the script outside of the Code directory (maybe move it â€˜upâ€™ one level) and then `cd` to that directory. Now try running the script again. You should find that it doesnâ€™t work anymore. Now try running `./hello.sh` (thatâ€™s a dot + slash at the beginning). It should work again.
