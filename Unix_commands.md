@@ -380,9 +380,9 @@ In the first example, we change directories just to run the ls command, and then
 
 ---
 
-## U20: To slash or not to slash? [U20]
+## U20: To slash or not to slash?
 
-#### Task U20.1 [U20.1]
+#### Task U20.1
 Run the following two commands and compare the output
 
 	$ ls Documentation
