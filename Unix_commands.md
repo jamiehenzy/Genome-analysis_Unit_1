@@ -51,9 +51,9 @@ There will be many situations where it will be useful to have multiple terminals
 
 ## U2. Your first Unix command [U2]
 
-Unix keeps files arranged in a hierarchical structure. From the 'top-level' of the computer, there will be a number of directories, each of which can contain files and subdirectories, and each of those in turn can of course contain more files and directories and so on, ad infinitum. "It's" important to note that you will always be in a directory when using the terminal. The default behavior is that when you open a new terminal you start in your own 'homeâ€ directory (containing files and directories that only you can modify).
+Unix keeps files arranged in a hierarchical structure. From the 'top-level' of the computer, there will be a number of directories, each of which can contain files and subdirectories, and each of those in turn can of course contain more files and directories and so on, ad infinitum. It's important to note that you will always be in a directory when using the terminal. The default behavior is that when you open a new terminal you start in your own 'homeâ€ directory (containing files and directories that only you can modify).
 
-To see what files are in our home directory, we need to use the [ls][] command. This command â€˜listsâ€™ the contents of a directory. So why donâ€™t they call the command â€˜listâ€™ instead? Well, this is a good thing because typing long commands over and over again is tiring and time-consuming. There are many (frequently used) Unix commands that are just two or three letters. If we run the ls command we should see something like:
+To see what files are in our home directory, we need to use the [ls][] command. This command â€˜listsâ€™ the contents of a directory. So why donâ€™t they call the command **list** instead? Well, this is a good thing because typing long commands over and over again is tiring and time-consuming. There are many (frequently used) Unix commands that are just two or three letters. If we run the ls command we should see something like:
 
 	olson27-1:~ kbradnam$ ls 
 	Application Shortcuts 	Documents	Library 
