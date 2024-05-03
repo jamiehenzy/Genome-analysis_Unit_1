@@ -551,7 +551,7 @@ The bottom of the nano window shows you a list of simple commands that are all a
 #### Task U27.1
 Type the following text in the editor and then save it (\^O). Nano will ask if you want to "save the modified buffer" and then ask if you want to keep the same name. Then exit nano (\^X) and use `less` to confirm that the profile file contains the text you added.
 
-	# some useful command line short-cuts 
+ 	# some useful command line short-cuts 
 	alias ls='ls -p' 
 	alias rm='rm -i'
 
@@ -595,84 +595,41 @@ So how do you make a Unix script (which are commonly called "shell scripts")? At
 
 #### Task U29.1
 Make a new directory in Desktop named "Code". Witin the Code directory, create a nano file named "hello.sh" containing the following two lines: 
+
 	# my first Unix shell script 
 	echo "Hello World"
 
-When you have done that, simply type `hello.sh` and see what happens. If you have previously run `source .profile` then you should be able to run â€˜hello.shâ€™ from any directory that you navigate to. If it worked, then it should have printed â€˜Hello worldâ€™. This very simple script uses the Unix command [echo][] which just prints output to the screen. Also note the comment that precedes the `echo` command, it is a good habit to add explanatory comments.
 
-#### Task U29.2 [U29.2]
-Try moving the script outside of the Code directory (maybe move it â€˜upâ€™ one level) and then `cd` to that directory. Now try running the script again. You should find that it doesnâ€™t work anymore. Now try running `./hello.sh` (thatâ€™s a dot + slash at the beginning). It should work again.
+#### Task U29.2
+Type `hello.sh` and see what happens. It likely won't work! You need to run a command that gives the file permission to execute. Do this by typing:
+`chmod u+x hello.sh`. Then run `hello.sh` again. What do you see now?
 
-[echo]: https://en.wikipedia.org/wiki/Echo_(command)
+#### Task U29.3
+Now place a "dot-slash" in front of the name of the file you want to execute, like this:
+
+	./hello.sh
+---
+
+The chmod command can also modify read and write permissions for files, and change any of the three sets of permissions (read, write, execute) at the level of "user", "group", and "other". You probably won't need to know any more about the chmod command other than you need to use it to make scripts executable.
 
 ---
 
-## U30: Keep to the $PATH [U30]
-
-The reason why the script worked when it was in the Code directory and then stopped working when you moved it is because we did something to make the Code directory a bit special. Remember this line that is in your .profile file?
-
-	PATH=$PATH":$HOME/Code"
-
-When you try running _any_ program in Unix, your computer will look in a set of predetermined places to see if a program by that name lives there. All Unix commands are just files that live in directories somewhere on your computer. Unix uses something called $PATH (which is an _environment variable_) to store a list of places to look for programs to run. In our .profile file we have just told Unix to also look in your Code directory. If we didnâ€™t add the Code directory to the $PATH, then we have to run the program by first typing ./ (dot slash). Remember that the dot means the current directory. Think of it as a way of forcing Unix to run a program (including Perl scripts).
-
----
-
-## U31: Ask for permission [U31]
-
-Programs in Unix need permission to be run. We will normally always have to type the following for any script that we create:
-
-	$ chmod u+x hello.sh
-
-This would use the [chmod][] to add _executable_ permissions (+x) to the file called â€˜hello.shâ€™ (the â€˜uâ€™ means add this permission to just you, the user). Without it, your script wonâ€™t run. Except that it did. One of the oddities of using the USB drive for this course, is that files copied to a USB drive have all permissions turned on by default. Just remember that you will normally need to run `chmod` on any script that you create. Itâ€™s probably a good habit to get into now.
-
-The chmod command can also modify read and write permissions for files, and change any of the three sets of permissions (read, write, execute) at the level of â€˜userâ€™, â€˜groupâ€™, and â€˜otherâ€™. You probably wonâ€™t need to know any more about the chmod command other than you need to use it to make scripts executable.
-
-[chmod]: https://en.wikipedia.org/wiki/Chmod
-
----
-
-## U32: The power of shell scripts [U36]
+## U30: The power of shell scripts
 
 Time to make some Unix shell scripts that might actually be useful.
 
-#### Task U32.1 [U32.1]
-Look in the Data/Unix_test_files directory. You should see several files (all are empty) and four directories. Now put the following information into a shell script (using `nano`) and save it as cleanup.sh.
+#### Task U30.1
+Look around at some of the files in your messiest folder, which is likely either Downloads or Desktop. Identify some file types you'd like to organize into folders. For example, you might want to move all .txt files into a "Text" folder, and all .mp3 files into a "Music folder". Put the appropriate information into a shell script (using `nano`) and save it as cleanup.sh. Might look like this:
 
 	#!/bin/bash
 	mv *.txt Text 
 	mv *.jpg Pictures 
 	mv *.mp3 Music 
-	mv *.fa Sequences
-
-**Make sure that this script is saved** in your `Unix_and_Perl_course/Code directory`. Now return to the `Unix_and_Perl_course/Data/Unix_test_files` directory and run this script. It should place the relevant files in the correct directories. This is a relatively simple use of shell scripting. As you can see the script just contains regular Unix commands that you might type at the command prompt. But if you had to do this type of file sorting every day, and had many different types of file, then it would save you a lot of time.
+	
+#### Task U30.2
+First use `ls` to show the files before they are organized. Then give permission to cleanup.sh and run it (remember the dot-slash). Use `ls` again to show the newly organized files.
 
 Did you notice the #!/bin/bash line in this script? There are several different types of shell script in Unix, and this line makes it clearer that a) that this is actually a file that can be treated as a program and b) that it will be a bash script (bash is a type of Unix). As a general rule, all type of scriptable programming languages should have a similar line as the first line in the program.
-
-#### Task U32.2 [U32.2]
-Here is another script. Copy this information into a file called change_file_extension.sh and again place that file in the Code directory.
-
-	#!/bin/bash
-
-	for filename in *.$1 
-	do 
-		mv $filename ${filename%$1}$2 
-	done
-
-Now go to the `Data/Unix_test_files/Text` directory. If you have run the exercise from Task [U32.1] then your text directory should now contain three files. Run the following command:
-
-	$ change_file_extension.sh txt text
-
-Now run the `ls` command to see what has happened to the files in the directory. You should see that all the files that ended with â€˜txtâ€™ now end with â€˜textâ€™. Try using this script to change the file extensions of other files.
-
-Itâ€™s not essential that you understand exactly how this script works at the moment (things will become clearer as you learn Perl), but you should at least see how a relatively simple Unix shell script can be potentially very useful.
-
----
-
-## End of part 1.
-
-You can now continue to learn a series of much more powerful Unix commands, or you can switch to [Part 3] in order to start learning Perl. The choice is yours!
-
-
 
 ---
 
