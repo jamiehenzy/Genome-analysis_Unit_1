@@ -33,7 +33,7 @@ A terminal is the common name for the program that does two main things. It allo
 #### Task U1.1 [U1.1]
 Once you are in your DC directory or on Terminal, you should see something that looks like the following (any text that appears inside your terminal window will look different):
 
-![Terminal application][](http://korflab.ucdavis.edu/Unix_and_Perl/terminal.png)
+![alt text](https://github.com/jamiehenzy/Genome-analysis_Unit_1/blob/media/terminal.png)
 
 Before we go any further, you should note that you can:
 
