@@ -646,8 +646,10 @@ Navigate to our course's shared folder:
 
 `cd /courses/BIOL3411.202440/shared`
 
+**Copy these files to your own folder before performing any of the exercises with them.**
+
 #### Task U32.1
-Use a command to show the names of the files in the UNIX folder. You'll need to access some of these files in this Tutorial.
+Use a command to show the names of the files in the UNIX folder. You'll need to access some of these files in this Tutorial. 
 
 ## How to Become a Unix power user
 
