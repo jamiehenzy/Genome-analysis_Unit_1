@@ -125,7 +125,7 @@ Frequently, you will find that you want to go 'upwards' one level in the directo
 
 	$ cd ~/Desktop
 	$ pwd 
-	/Users/yourname
+	/Users/yourname/Desktop
 	$ cd .. 
 	$ pwd 
 	/Users
