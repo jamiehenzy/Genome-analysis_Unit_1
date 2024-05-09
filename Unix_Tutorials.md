@@ -174,7 +174,7 @@ Hopefully, you should find that `cd` and `cd ~` do the same thing, i.e. they tak
 
 ---
 
-##U10: Making the `ls` command more useful
+## U10: Making the `ls` command more useful
 
 The `..` operator that we saw earlier can also be used with the `ls` command. Can you see how the following command is listing the contents of the root directory? If you want to test this, try running `ls /` and see if the output is any different.
 
