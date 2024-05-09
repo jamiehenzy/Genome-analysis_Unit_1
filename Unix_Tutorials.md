@@ -153,6 +153,9 @@ or...
 
 They both achieve the same thing, but the 2nd example requires that you know about the full _path_ from the root level of the computer to your directory of interest (the 'path' is an important concept in Unix). Sometimes it is quicker to change directories using the relative path, and other times it will be quicker to use the absolute path.
 
+#### Task U8.1
+Try moving from a directory to another directory at that same level, using each method (absolute and relative paths).
+
 ---
 
 ## U9: Time to go home
