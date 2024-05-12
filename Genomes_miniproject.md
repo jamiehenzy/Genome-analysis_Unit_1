@@ -2,10 +2,10 @@
 
 ### Know your sequences
 
-When you think about sequence data, you'll want to ask yourself:
-Which species are the sequences from?
-Is this GENOMIC DNA (gDNA), representing all parts of the genome? 
-Or is this data from mRNA (cDNA), representing parts of the genome that are being expressed under some condition?
+* When you think about sequence data, you'll want to ask yourself:
+* Which species are the sequences from?
+* Is this GENOMIC DNA (gDNA), representing all parts of the genome? 
+* Or is this data from mRNA (cDNA), representing parts of the genome that are being expressed under some condition?
 
 Genomic DNA sequences could be reads that have not yet been assembled into a complete genome, OR they could be reads from individuals from a species whose genome has already been assembled, but with the goal of identifying variation in the population ("resequencing").
 
@@ -18,8 +18,9 @@ In this exercise you'll download genome sequences from several species:
 
 You'll also download a couple of tools from NCBI that allow you to readily download a variety of genomes, genes, and other genomic information.
 
+### Document your sequences
 
-I.  Create a directory on Discovery for genomic data, with a README file for each genome:
+I.  Create a directory in your student folder on Discovery for genomic data, with a README file for each genome:
 
 Create a file called README.txt that contains basic information on each genome you add to the directory, including:
 *	Size of genome
@@ -30,9 +31,12 @@ Create a file called README.txt that contains basic information on each genome y
 
 Here are the accession numbers for the genome sequences you should use:
 
-B. burgdorferei: GCA_000008685.2_ASM868v2
+B. burgdorferei: GCF_000008685.2
 C. elegans: GCF_000002985.6 
 
+### Download the download tools
+
+For this step, you'll work in your temporary "scratch" directory. The ncbi tools you are downloading take up a lot of space and after using them this initial time, there's no reason to keep them in your files.
 
 II.  Download the **ncbi_datasets** tools. These are handy for downloading lots of genome data. Log onto Discovery and cd to your “scratch” account:
 
@@ -54,41 +58,23 @@ Make them executable:
 
 ***Use the `ls` command to check that they are there (should see “datasets” and “dataformat” in the directory).***
   
+### Use the new tools to download the genomes
 
-III.  Download the genome sequences to your scratch account, using good practices for how you store the files (in other words, set up folders and subfolders that have a logical structure). 
+III.  Download the genome sequences to your scratch account.
 
-For downloading genomes you'll want to use the accession number for each genome (for example, GCF000002985.6) by entering:
+For downloading genomes you'll want to use the accession number for each genome (for example, GCF000002985.6). The NCBI tools make this easy. For each genome accession number, use this command:
 
 `./datasets download genome accession <accession-number>`
 
 After the download, use `ls` to see that an NCBI zip file is now in the directory. Unzip it by entering:
 
-`unzip ncbi_dataset.zip`
+`unzip <filename>.zip`
 
 You’ll see some files being “inflated”. When the command prompt returns, use the `ls` command again and you should see a directory ‘ncbi_dataset’ that contains the unzipped files.
 
-***
-When you use ls to see what’s in a “room”, add the -l (lowercase L) flag so that you can distinguish between files and directories. For example, below is what I see as I travel down the subdirectories within my “borrelia_dataset”. I used ls until I got down to what looked like the sequence file (GCF_000008685.2) then I used ls -l and found out it is actually another directory:
-[jhenzy@login-00 borrelia_dataset]$ ls
-data_bor
-[jhenzy@login-00 borrelia_dataset]$ cd data_bor/
-[jhenzy@login-00 data_bor]$ ls
-assembly_data_report.jsonl  dataset_catalog.json  GCF_000008685.2
-[jhenzy@login-00 data_bor]$ ls -l
-total 4
--rw------- 1 jhenzy users 2855 Jan 27 13:34 assembly_data_report.jsonl
--rw------- 1 jhenzy users  339 Jan 27 13:34 dataset_catalog.json
-drwxr-xr-x 2 jhenzy users 4096 Jan 28 17:55 GCF_000008685.2
-[jhenzy@login-00 data_bor]$
+## Stop and think
 
-This makes it clear that GCF_000008685.2 is a directory and NOT the sequence file. To get to the sequence file, I’ll need to change into that directory:
-[jhenzy@login-00 data_cel]$ cd GCF_000002985.6/
-[jhenzy@login-00 GCF_000002985.6]$ ls -l
-total 99161
--rw------- 1 jhenzy users 101540352 Jan 26 12:13 GCF_000002985.6_WBcel235_genomic.fna
-
-Within the GCF_000008685.2 directory, I see the actual sequence file, GCF_000002985.6_WBcel235_genomic.fna		
-***
+Look at the name of the file you unzipped into several more files. Now think about what would happen if you repeat the same procedure for the second genome accession number. 
 
 IV.  Analysis
 To analyze the genome sequences, you'll use two programs that are available as modules on Discovery: seqtk and emboss.
