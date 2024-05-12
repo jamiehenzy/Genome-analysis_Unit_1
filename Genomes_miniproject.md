@@ -1,7 +1,9 @@
-Genomes mini-project
-I.  Create a repository on GitHub for your Genome mini-project
+# Working with genomes
 
-In a README.md file, give basic information on the genome, including:
+## Genomes mini-project
+I.  Create a directory on Discover for your Genome mini-project
+
+Create a file called README.txt that contains basic information on the genome, including:
 •	Size of genome
 •	Structure (such as, linear or circular, how many chromosomes, how many plasmids)
 •	Estimated number of protein-coding genes
