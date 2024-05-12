@@ -1,6 +1,4 @@
-# Working with genomes
-
-## Genomes mini-project
+# Working with genome sequences
 
 ### Know your sequences
 
@@ -21,13 +19,14 @@ In this exercise you'll download genome sequences from several species:
 You'll also download a couple of tools from NCBI that allow you to readily download a variety of genomes, genes, and other genomic information.
 
 
-I.  Create a directory on Discovery for your Genomes mini-project, with a README file for each genome:
+I.  Create a directory on Discovery for genomic data, with a README file for each genome:
 
-Create a file called README.txt that contains basic information on the three genomes, including:
+Create a file called README.txt that contains basic information on each genome you add to the directory, including:
 *	Size of genome
 *	Structure (such as, linear or circular, how many chromosomes, how many plasmids)
 *	Estimated number of protein-coding genes
-*	Where to access the genome sequence and at what coverage it was sequenced
+*	Where to access the genome sequence
+* At what coverage it was sequenced
 
 Here are the accession numbers for the genome sequences you should use:
 
@@ -35,7 +34,7 @@ B. burgdorferei: GCA_000008685.2_ASM868v2
 C. elegans: GCF_000002985.6 
 
 
-II.  Download the ncbi_datasets tools. You’ll need these in order to download your genome data. Log onto Discovery and cd to your “scratch” account:
+II.  Download the **ncbi_datasets** tools. These are handy for downloading lots of genome data. Log onto Discovery and cd to your “scratch” account:
 
 `cd /scratch/<username>`
 
@@ -57,7 +56,8 @@ Make them executable:
   
 
 III.  Download the genome sequences to your scratch account, using good practices for how you store the files (in other words, set up folders and subfolders that have a logical structure). 
-Download your genome using the accession number for each genome (for example, GCF000002985.6) by entering:
+
+For downloading genomes you'll want to use the accession number for each genome (for example, GCF000002985.6) by entering:
 
 `./datasets download genome accession <accession-number>`
 
@@ -93,11 +93,16 @@ Within the GCF_000008685.2 directory, I see the actual sequence file, GCF_000002
 IV.  Analysis
 To analyze the genome sequences, you'll use two programs that are available as modules on Discovery: seqtk and emboss.
 
-Remember that you need to load the modules into your workspace (scratch) to use them.
+You need to **load** the modules into your workspace (scratch) to use them.
 
 `module load emboss`
 
 `module load seqtk`
+
+To see which modules are loaded into your current session:
+`module list`
+
+You should see emboss and seqtk among those shown.
 
 When you download your organism's genome sequence, multiple fasta sequences are usually included in one file. You can use the emboss command 'infoseq' to see what a file contains:
 
