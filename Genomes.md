@@ -20,7 +20,7 @@ You'll also download a couple of tools from NCBI that allow you to readily downl
 
 ### Document your sequences
 
-I.  Create a directory in your student folder on Discovery for genomic data, with a README file for each genome:
+I.  Create a directory in your student folder on Discovery for genomic data, with a README file:
 
 Create a file called README.txt that contains basic information on each genome you add to the directory, including:
 *	Size of genome
