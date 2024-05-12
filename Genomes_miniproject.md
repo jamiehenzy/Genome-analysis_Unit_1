@@ -1,6 +1,19 @@
 # Working with genomes
 
 ## Genomes mini-project
+
+### Know your sequences
+
+When you think about sequence data, you'll want to ask yourself:
+Which species are the sequences from?
+Is this GENOMIC DNA (gDNA), representing all parts of the genome? 
+Or is this data from mRNA (cDNA), representing parts of the genome that are being expressed under some condition?
+
+Genomic DNA sequences could be reads that have not yet been assembled into a complete genome, OR they could be reads from individuals from a species whose genome has already been assembled, but with the goal of identifying variation in the population ("resequencing").
+
+Always make sure you're clear on what the sequences you are working with represent.
+
+
 I.  Create a directory on Discover for your Genome mini-project
 
 Create a file called README.txt that contains basic information on the genome, including:
