@@ -74,10 +74,28 @@ You’ll see some files being “inflated”. When the command prompt returns, u
 
 ## Stop and think
 
-Look at the name of the file you unzipped into several more files. Now think about what would happen if you repeat the same procedure for the second genome accession number. 
+Look at the name of the file you unzipped into several more files, and at the name of the directory in which those files live. Now think about what would happen if you repeat the same procedure for the second genome accession number. 
+
+Most programs give you options for the output of whatever function you're performing. In this case, and option `--filename` allows you to specify what you want the zipped file to be named. That way, you won't overwrite the first set of files when you download the second set! Just make sure that your output filename ends with .zip. For example, for the Borrelia genome download, you might modify the command above like so:
+
+`./datasets download genome accession GCF_000008685.2 --filename bbur.zip`
+
+Do the same for the _C. elegans_ genome. 
+
+Similarly, when you unzip the files, it creates a directory named ncbi_dataset. To load the files into specific directories so that the one set of files does not replace the other, you can use the `-d` flag with the unzip command. First, make a new directory named something like, "worm_unzip". Then use this command to unzip the files to the newly created directory:
+
+`unzip -d worm_unzip/ worm.zip`
+
+Note the syntax of the command: {do this} {target for output will be a directory} {target directory name} {file to unzip} 
+
+Explore the output files. Which file is the actual genomic sequence? What are the other files?
+
+### First foray into modules!
+
+Before proceeding, move your genome files from your scratch folder to the new directory you set up in your student folder. For each genome, there should be three files that you move.
 
 IV.  Analysis
-To analyze the genome sequences, you'll use two programs that are available as modules on Discovery: seqtk and emboss.
+To analyze the genome sequences, you'll use two programs that are available as **modules** on Discovery: seqtk and emboss.
 
 You need to **load** the modules into your workspace (scratch) to use them.
 
@@ -85,7 +103,8 @@ You need to **load** the modules into your workspace (scratch) to use them.
 
 `module load seqtk`
 
-To see which modules are loaded into your current session:
+Check that it worked. To see which modules are loaded into your current session:
+
 `module list`
 
 You should see emboss and seqtk among those shown.
