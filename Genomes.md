@@ -32,6 +32,7 @@ Create a file called README.txt that contains basic information on each genome y
 Here are the accession numbers for the genome sequences you should use:
 
 B. burgdorferei: GCF_000008685.2
+
 C. elegans: GCF_000002985.6 
 
 ### Download the download tools
