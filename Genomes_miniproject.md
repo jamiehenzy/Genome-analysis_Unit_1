@@ -14,9 +14,9 @@ Genomic DNA sequences could be reads that have not yet been assembled into a com
 Always make sure you're clear on what the sequences you are working with represent.
 
 In this exercise you'll download genome sequences from several species:
-_B burgdorferei_ (Lyme disease bacterium)
-_C elegans_ (lab worm)
-_Parastichopus parvimensis_ (sea cucumber - you already have this one!)
+* _B burgdorferei_ (Lyme disease bacterium)
+* _C elegans_ (lab worm)
+* _Parastichopus parvimensis_ (sea cucumber - you already have this one!)
 
 You'll also download a couple of tools from NCBI that allow you to readily download a variety of genomes, genes, and other genomic information.
 
@@ -24,16 +24,15 @@ You'll also download a couple of tools from NCBI that allow you to readily downl
 I.  Create a directory on Discovery for your Genomes mini-project, with a README file for each genome:
 
 Create a file called README.txt that contains basic information on the three genomes, including:
-•	Size of genome
-•	Structure (such as, linear or circular, how many chromosomes, how many plasmids)
-•	Estimated number of protein-coding genes
-•	Where to access the genome sequence and at what coverage it was sequenced
+*	Size of genome
+*	Structure (such as, linear or circular, how many chromosomes, how many plasmids)
+*	Estimated number of protein-coding genes
+*	Where to access the genome sequence and at what coverage it was sequenced
 
-On your own, search for sites from which you can download the genome sequence of your organism and make a note of them for later (paste the url in your lab notebook, for example). Here are the accession numbers for the genome sequences you should use (depending on your group’s organism):
+Here are the accession numbers for the genome sequences you should use:
 
 B. burgdorferei: GCA_000008685.2_ASM868v2
-C. elegans: GCF_000002985.6
-P. parvimensis: 
+C. elegans: GCF_000002985.6 
 
 
 II.  Download the ncbi_datasets tools. You’ll need these in order to download your genome data. Log onto Discovery and cd to your “scratch” account:
