@@ -111,25 +111,38 @@ You should see emboss and seqtk among those shown.
 
 When you download your organism's genome sequence, multiple fasta sequences are usually included in one file. You can use the emboss command 'infoseq' to see what a file contains:
 
-infoseq <filename>
+`infoseq <filename>`
 
-One item on your deliverables list is to generate the reverse complement of a genomic sequence from your organism. First you'll need to extract just one fasta sequence from the whole batch. You can use a seqtk command to extract a sequence. First you need to put the sequence identifier (usually the accession number) into a file. You can do this quickly using echo. 
+* How many sequence files are in the worm genome?
+* How many sequence files are in the Borrelia genome?
+* Which sequence in the worm genome has the lowest GC%?
+* Which sequence in Borrelia has the highest GC%?
 
-echo '<identifier>'  >  <make-up-a-filename>
+What if you wanted to extract one of the sequences into a new file for further analysis. For example, let's extract the Borrelia sequence with the highest GC%. You can use a command from the program **seqtk** to extract a sequence. First you need to put the sequence identifier (usually the accession number) into a file. You can do this quickly using echo. 
+
+`echo '<identifier>'  >  <make-up-a-filename>`
 
 For example, it might look like this:
 
-echo 'NC_008524.2' > list.txt
+`echo 'NC_008524.2' > list.txt`
+
+**Note: I'm using a different accession number as an example**
 
 This will create a file called list.txt that contains just one line: NC_008524.2.
 
 Then use the command that tells seqtk to extract that sequence from the larger file and store it in a new file by itself:
 
-seqtk subseq <file-with-many-sequences> list.txt > NC_008524.2.txt
+`seqtk subseq <file-with-many-sequences> list.txt > NC_008524.2.txt`
 
-Now we can generate the reverse complement of this sequence, putting it into a new file:
+The sequence portion of a file is often presented as all one line, so using the `head` command just outputs the entire sequence. Which command allows you to view the contents in a more controlled way? Use it to note the first three and last three letters of the sequence (write them down).
 
-revseq NC_008524.2.txt NC_008524.2.rev
+Now we can generate the **reverse complement** of this sequence, representing the complementary strand. We'll put it into a new file:
 
-***Remember to keep using tab-complete, and check after commands that the new file is added to your directory by using ls. ***
+`revseq NC_008524.2.txt NC_008524.2.rev`
+
+**Remember to keep using tab-complete, and check after commands that the new file is added to your directory by using ls.**
+
+Look at the contents of the .rev file. Are you convinced this is the reverse complement?
+
+Now perform the same set of operations on the worm sequence that had the lowest GC%!
 
