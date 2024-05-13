@@ -2,7 +2,7 @@
 
 ### Know your sequences
 
-* When you think about sequence data, you'll want to ask yourself:
+When you think about sequence data, you'll want to ask yourself:
 * Which species are the sequences from?
 * Is this GENOMIC DNA (gDNA), representing all parts of the genome? 
 * Or is this data from mRNA (cDNA), representing parts of the genome that are being expressed under some condition?
