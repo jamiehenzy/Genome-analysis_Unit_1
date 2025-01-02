@@ -604,12 +604,15 @@ Make a new directory in Desktop named "Code". Witin the Code directory, create a
 
 
 #### Task U29.2
-Type `bash hello.sh` and see what happens. It likely won't work! Use `ls -l` and look closely at the information in the first column. You'll likely see some r's and w's, but no x's (explained below). 
+Type `bash hello.sh` and see what happens. It likely won't work! Use `ls -l` and look closely at the information in the first column. You'll see some r's and w's, but no x's (explained below). 
 
 You need to run a command that gives the file permission to execute. Do this by typing:
-`chmod u+x hello.sh`. Now type `ls -l` and look again at the first column. What changed?
 
-Now run `bash hello.sh` again. What do you see now?
+`chmod u+x hello.sh` 
+
+Type `ls -l` and look again at the first column. What changed?
+
+Now run `bash hello.sh` again. What do you see?
 
 
 #### Task U29.3
