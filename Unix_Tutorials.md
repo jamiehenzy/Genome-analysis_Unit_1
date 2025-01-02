@@ -417,9 +417,9 @@ Potentially, `rm` is a very dangerous command; if you delete something with `rm`
 Let me repeat that last part again. **It is possible to delete EVERY file you have ever created with the `rm` command.** Are you scared yet? You should be. Luckily there is a way of making `rm` a little bit safer. We can use it with the `-i` command-line option which will ask for confirmation before deleting anything:
 
 	$ cd /Users/jamiehenzy/Desktop/unix 
-	$ touch dog.txt cat.txt
+	$ touch dog.txt cat.txt  owl.fa
 	$ ls 
-	dog.txt	    cat.txt
+	dog.txt	    cat.txt  owl.fa
 	$ rm -i dog.txt 
 	remove dog.txt? y 
 	$ rm -i cat.txt 
@@ -428,7 +428,7 @@ Let me repeat that last part again. **It is possible to delete EVERY file you ha
 We could have simplified this step by using a wild-card (e.g. `rm -i *.txt`).
 
 #### Task U21.1
-Remove the remaining file from the "/Users/yourname/Desktop/unix" directory. Now navigate to either your Desktop or Downloads folder and remove any files you don't need. Use a wild-card when appropriate. For example, I frequently have screenshots pile up on my Desktop, which I can quickly remove with `rm scree*`.
+Remove the remaining file from the "/Users/yourname/Desktop/unix" directory. Now navigate to either your Desktop or Downloads folder and remove any files you don't need. Use a wild-card when appropriate. For example, I frequently have screenshots pile up on my Desktop, which I can quickly remove with `rm Scree*`.
 
 ---
 
