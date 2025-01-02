@@ -421,8 +421,8 @@ Let me repeat that last part again. **It is possible to delete EVERY file you ha
 	$ ls 
 	dog.txt	    cat.txt  owl.txt
 	$ rm -i dog.txt 
-	remove earth.txt? y 
-	$ rm -i dog.txt 
+	remove dog.txt? y 
+	$ rm -i cat.txt 
 	remove cat.txt? y
 
 We could have simplified this step by using a wild-card (e.g. `rm -i *.txt`).
