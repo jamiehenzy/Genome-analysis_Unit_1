@@ -604,10 +604,13 @@ Make a new directory in Desktop named "Code". Witin the Code directory, create a
 
 
 #### Task U29.2
-Type `hello.sh` and see what happens. It likely won't work! Use `ls -l` and look closely at the information in the first column. You'll likely see some r's and w's, but no x's (explained below). You need to run a command that gives the file permission to execute (x). Do this by typing:
-`chmod u+x hello.sh`. Then run `hello.sh` again. What do you see now?
+Type `bash hello.sh` and see what happens. It likely won't work! Use `ls -l` and look closely at the information in the first column. You'll likely see some r's and w's, but no x's (explained below). 
 
-Now type `ls -l` and look again at the first column. What changed?
+You need to run a command that gives the file permission to execute. Do this by typing:
+`chmod u+x hello.sh`. Now type `ls -l` and look again at the first column. What changed?
+
+Now run `bash hello.sh` again. What do you see now?
+
 
 #### Task U29.3
 Now place a "dot-slash" in front of the name of the file you want to execute, like this:
