@@ -419,7 +419,7 @@ Let me repeat that last part again. **It is possible to delete EVERY file you ha
 	$ cd /Users/jamiehenzy/Desktop/unix 
 	$ touch dog.txt cat.txt
 	$ ls 
-	dog.txt	    cat.txt  owl.txt
+	dog.txt	    cat.txt
 	$ rm -i dog.txt 
 	remove dog.txt? y 
 	$ rm -i cat.txt 
