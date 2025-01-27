@@ -646,25 +646,25 @@ Did you notice the #!/bin/bash line in this script? There are several different 
 
 
 # Part 2: Advanced Unix
-It's important to keep in mind the distinction between working on the command line _locally_ versus _remotely_. When you're working locally, you see the file structure of your own computer. When you work remotely, you see the file structure of the Discovery Cluster (DC). For Tutorial 1, you worked locally. For Tutorial 2, you'll log onto DC and work remotely.
+It's important to keep in mind the distinction between working on the command line _locally_ versus _remotely_. When you're working locally, you see the file structure of your own computer. When you work remotely, you see the file structure of the Explorer Cluster (EC). For Tutorial 1, you worked locally. For Tutorial 2, you'll log onto EC and work remotely.
 
 ## U31: Log onto DC
 
-`ssh <login_name>@login.discovery.neu.edu`
+`ssh <login_name>@login.explorer.northeastern.edu`
 
 ## U32: Familiarize yourself with the shared files
-Navigate to our course's shared folder:
+Navigate to our course's folders and use the ls command to see what's there:
 
-`cd /courses/BIOL3411.202440/shared`
+`cd /courses/BIOL3411.202530`
 
-**Copy these files to your own folder before performing any of the exercises with them.**
+**Whenever you're asked to perform an exercises with a file from any of these folders, COPY it to your own directory first.**
 
 #### Task U32.1
-Use a command to show the names of the files in the UNIX folder. You'll need to access some of these files in this Tutorial. 
+Use a command to show the names of the files in the "data" folder. You'll need to access some of these files in this Tutorial. 
 
 ## How to Become a Unix power user
 
-The commands that you have learnt so far are essential for doing any work in Unix but they don't really let you do anything that is very useful. The following sections will introduce a few new commands that will start to show you how powerful Unix is.
+The commands that you have learned so far are essential for doing any work in Unix but they don't really let you do anything that is very useful. The following sections will introduce a few new commands that will start to show you how powerful Unix is!
 
 ---
 
