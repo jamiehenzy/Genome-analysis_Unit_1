@@ -1,7 +1,7 @@
 # Part 2: Advanced Unix
 It's important to keep in mind the distinction between working on the command line _locally_ versus _remotely_. When you're working locally, you see the file structure of your own computer. When you work remotely, you see the file structure of the Explorer Cluster (EC). For Tutorial 1, you worked locally. For Tutorial 2, you'll log onto EC and work remotely.
 
-## U31: Log onto DC
+## U31: Log onto EC
 
 `ssh <login_name>@login.explorer.northeastern.edu`
 
