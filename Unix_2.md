@@ -22,9 +22,10 @@ The commands that you have learned so far are essential for doing any work in Un
 ---
 
 ## U33: Match making
-You will often want to search files to find lines that match a certain pattern. The Unix command `grep` does this (and much more). You might already know that FASTA files (used frequently in bioinformatics) have a simple format: one header line which must start with a '>' character, followed by a DNA or protein sequence on subsequent lines. To find only those header lines in a FASTA file, we can use grep, which just requires you specify a pattern to search for, and one or more files to search. Depending on where you currently are (use `pwd` to find out) you may use a different path than that shown below to get to these files.
+You will often want to search files to find lines that match a certain pattern. The Unix command `grep` does this (and much more). You might already know that FASTA files (used frequently in bioinformatics) have a simple format: one header line which must start with a '>' character, followed by a DNA or protein sequence on subsequent lines. To find only those header lines in a FASTA file, we can use grep, which just requires you specify a pattern to search for, and one or more files to search.
 
-	$ cd Data/Arabidopsis/ 
+Copy the file "intron_IME_data.fasta" to your own directory, then perform the exercise below:
+
 	$ grep ">" intron_IME_data.fasta
 
 	>AT1G68260.1_i1_204_CDS 
