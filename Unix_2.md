@@ -167,6 +167,9 @@ another range of characters. This operation alters the file so it is wise to dir
 	>chr1 dumped from adb: mar/14/08 12:28; last updated: 2007-12-20
 	ccctaaaccctaaaccctaaaccctaaacctctgaatccttaatccctaaatccctaaatctttaaatcctacatccat
 
+#### Task U39.1
+Now that you've tested it on just the first line, alter the command to change the entire sequence into small case, directing the output into the same smallcase_chr1.fasta file.
+
 ---
 
 ## U40: That's what she sed
