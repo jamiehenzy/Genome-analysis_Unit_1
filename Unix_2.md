@@ -6,7 +6,7 @@ It's important to keep in mind the distinction between working on the command li
 `ssh <login_name>@login.explorer.northeastern.edu`
 
 ## U32: Familiarize yourself with the shared files
-Navigate to our course's folders and use the ls command to see what's there:
+Navigate to our course's folders and use the `ls` command to see what's there:
 
 `cd /courses/BIOL3411.202530`
 
@@ -73,7 +73,7 @@ This is very easy to do in Unix. You can send the output from any command to any
 	.
 	.
 
-Notice that you still have control of your output as you are now in the `less` program. If you press the forward slash (/) key in `less`, you can then specify a search pattern. Type ATGTGA after the slash and press enter. The `less` program will highlight the location of these matches on each line. Note that `grep` matches patterns on a per line basis. So if one line ended ATG and the next line started TGA, then `grep` would not find it.
+Notice that you still have control of your output as you are now in the `less` program. You can use the space bar to proceed through the output. If you press the forward slash (/) key in `less`, you can then specify a search pattern. Type ATGTGA after the slash and press enter. The `less` program will highlight the location of these matches on each line. Note that `grep` matches patterns on a per line basis. So if one line ended ATG and the next line started TGA, then `grep` would not find it. To exit `less` just enter `q`.
 
 >***Any time you run a Unix program or command that outputs a lot of text to the screen, you can instead pipe that output into the `less` program.***
 
