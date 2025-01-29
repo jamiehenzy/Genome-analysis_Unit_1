@@ -95,13 +95,13 @@ Sometimes we do not want to use `less` to see _all_ of the output from a command
 	chr1.fasta:CTGCAAAGGCCTACCTGTTTGTCCCTGTTACTGACAATACGTCTATGGAACCCATAAAAGGGATCAACTGGGAATTGGT
 	chr1.fasta:ACGTCGAAGGGGGTAAGATTGCAGCTAATCATTTGATGAAATGGATTGGGATTCACGTGGAGGATGATCCTGATGAAGT
 
-The `*` character acts as a wildcard meaning 'search all files in the current directory' and the `head` command restricts the total amount of output to 10 lines. Notice that the output also includes the name of the file containing the matching pattern. In this case, the `grep` command finds the ACGTC pattern in four protein sequences and several lines of the the chromosome 1 DNA sequence (we don't know how many exactly because the head command is only giving us ten lines of output).
+The `*` character acts as a wildcard meaning 'search all files in the current directory' and the `head` command restricts the total amount of output to 10 lines. Notice that the output also includes the name of the file containing the matching pattern. In this case, the `grep` command finds the ACGTC pattern in several protein sequences and several lines of the  chromosome 1 DNA sequence (we don't know how many exactly because the head command is only giving us ten lines of output).
 
 ---
 
 ## U36: Getting fancy with regular expressions
 
-A concept that is supported by many Unix programs and also by most programming languages (including Perl) is that of using "regular expressions" ("regex"). These allow you to specify search patterns which are quite complex and really help restrict the huge amount of data that you might be searching for to some very specific lines of output. E.g. you might want to find lines that start with an 'ATG' and finish with 'TGA' but which have at least three AC dinucleotides in the middle:
+A concept that is supported by many Unix programs and also by most programming languages is that of using "regular expressions" ("regex"). These allow you to specify search patterns which are quite complex and really help restrict the huge amount of data that you might be searching for to some very specific lines of output. E.g. you might want to find lines that start with an 'ATG' and finish with 'TGA' and also have at least three AC dinucleotides in the middle:
 
 	$ grep "^ATG.*ACACAC.*TGA$" chr1.fasta
 
@@ -137,7 +137,7 @@ Rather than showing you the lines that match a certain pattern, `grep` can also 
 	9785
 
 #### Task U37.1
-Count how many times each pattern from **Task U36.1** occurs in all of the sequence files (specifying `*.fasta` will allow you to specify all sequence files).
+Count how many times each of the first three patterns from **Task U36.1** occur in all of the sequence files (specifying `*.fasta` will allow you to specify all sequence files).
 
 ---
 
