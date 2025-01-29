@@ -137,7 +137,7 @@ Rather than showing you the lines that match a certain pattern, `grep` can also 
 	9785
 
 #### Task U37.1
-Count how many times each of the first three patterns from **Task U36.1** occur in all of the sequence files (specifying `*.fasta` will allow you to specify all sequence files).
+Count how many times each of the first three patterns from **Task U36.1** occurs in all of the sequence files (specifying `*.fasta` will allow you to specify all sequence files).
 
 ---
 
@@ -146,7 +146,7 @@ Count how many times each of the first three patterns from **Task U36.1** occur 
 You have seen already how you can use `less` to view files, and also to search for patterns. If you are viewing a file with `less`, you can type a forward-slash `/` character, and this allows you to then specify a pattern and it will then search for (and highlight) all matches to that pattern. Technically it is searching forward from whatever point you are at in the file. You can also type a question-mark `?` and `less` will allow you to search backwards. The real bonus is that the patterns you specify can be regular expressions.
 
 #### Task U38.1
-Try viewing a sequence file with `less` and then searching for a pattern such as `ATCG.*TAG$`. This should make it easier to see exactly where your regular expression pattern matches. After typing a forward-slash (or a question-mark), you can press the up and down arrows to select previous searches.
+Try viewing a DNA sequence file (chr1.fasta or the introns file) with `less` and then searching for a pattern such as `ATCG.*TAG$`. This should make it easier to see exactly where your regular expression pattern matches. After typing a forward-slash (or a question-mark), you can press the up and down arrows to select previous searches.
 
 ---
 
@@ -154,7 +154,7 @@ Try viewing a sequence file with `less` and then searching for a pattern such as
 
 We have seen that these sequence files contain upper-case characters. What if we wanted to turn them into lower-case
 characters (because maybe another bioinformatics program will only work if they are lower-case)? The Unix command `tr`
-(short for transliterate) does just this, it takes one range of characters that you specify and changes them into
+(short for transliterate) does just this -- it takes one range of characters that you specify and changes them into
 another range of characters:
 
 	$ head -n 2 chr1.fasta
