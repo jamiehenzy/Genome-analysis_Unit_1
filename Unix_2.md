@@ -168,17 +168,21 @@ another range of characters. This operation alters the file so it is wise to dir
 	ccctaaaccctaaaccctaaaccctaaacctctgaatccttaatccctaaatccctaaatctttaaatcctacatccat
 
 #### Task U39.1
-Now that you've tested it on just the first line, alter the command to change the entire sequence into small case, directing the output into the same smallcase_chr1.fasta file.
+Now that you've tested it on just the first line, alter the command to change the entire sequence into small case, directing the output into the smallcase_chr1.fasta file.
 
 ---
 
 ## U40: That's what she sed
 
-The `tr` command let's you change a range of characters into another range. But what if you wanted to change a particular pattern into something completely different? Unix has  a very powerful command called `sed` that is capable of performing a variety of text manipulations. Let's assume that you want to change the way the FASTA header looks:
+The `tr` command let's you change a range of characters into another range. But what if you wanted to change a particular pattern into something completely different? Unix has a very powerful command called `sed` that is capable of performing a variety of text manipulations. Let's assume that you want to change the way the FASTA header looks:
 
-	$ head -n 1 chr1.fasta >Chr1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
+	$ head -n 1 chr1.fasta 
+ 	
+  	>Chr1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
 
-	$ head -n 1 chr1.fasta | sed 's/Chr1/Chromosome 1/' >Chromosome 1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
+	$ head -n 1 chr1.fasta | sed 's/Chr1/Chromosome 1/' 
+ 
+ 	>Chromosome 1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
 
 The 's' part of the `sed` command puts `sed` in 'substitute' mode, where you specify one pattern (between the first two forward slashes) to be replaced by another pattern (specified between the second set of forward slashes). Note that this doesn't actually change the contents of the file, it just changes the screen output from the previous command in the pipe. We will learn later on how to send the output from a command into a new file.
 
