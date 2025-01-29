@@ -180,9 +180,9 @@ The `tr` command let's you change a range of characters into another range. But 
  	
   	>Chr1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
 
-	$ head -n 1 chr1.fasta | sed 's/Chr1/Chromosome 1/' 
+	$ head -n 1 chr1.fasta | sed 's/Chr1/Chromosome_1/' 
  
- 	>Chromosome 1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
+ 	>Chromosome_1 dumped from ADB: Mar/14/08 12:28; last updated: 2007-12-20
 
 The 's' part of the `sed` command puts `sed` in 'substitute' mode, where you specify one pattern (between the first two forward slashes) to be replaced by another pattern (specified between the second set of forward slashes). Note that this doesn't actually change the contents of the file, it just changes the screen output from the previous command in the pipe. We will learn later on how to send the output from a command into a new file.
 
