@@ -192,7 +192,9 @@ The 's' part of the `sed` command puts `sed` in 'substitute' mode, where you spe
 
 For this section we want to work with a different type of file. It is sometimes good to get a feeling for how large a file is before you start running lots of commands against it. The `ls -l` command will tell you how big a file is, but for many purposes it is often more desirable to know how many 'lines' it has. That is because many Unix commands like `grep` and `sed` work on a line by line basis. Fortunately, there is a simple Unix command called `wc` (word count) that does this:
 
-	$ cd Data/Arabidopsis/ $ wc At_genes.gff 531497 4783473 39322356 At_genes.gff
+	$ wc At_genes.gff 
+ 
+ 	531497 4783473 39322356 At_genes.gff
 
 The three numbers in the output above count the number of lines, words and bytes in the specified file(s). If we had run `wc -l`, the `-l` option would have shown us just the line count.
 
@@ -200,9 +202,9 @@ The three numbers in the output above count the number of lines, words and bytes
 
 ## U42: GFF and the art of redirection
 
-The Arabidopsis directory also contains a "GFF file". This is a common file format in bioinformatics and GFF files are used to describe the location of various features on a DNA sequence. Features can be exons, genes, binding sites etc, and the sequence can be a single gene or (more commonly) an entire chromosome.
+The Arabidopsis file we looked at above is a "GFF file". This is a common file format in bioinformatics and GFF files are used to describe the location of various features on a DNA sequence. Features can be exons, genes, binding sites etc, and the sequence can be a single gene or (more commonly) an entire chromosome.
 
-This GFF file describes of all of the gene-related features from chromosome I of _A. thaliana_. We want to play around with some of this data, but don't need all of the file...just 10,000 lines will do (rather than the ~500,000 lines in the original). We will create a new (smaller) file that contains a subset of the original:
+This GFF file describes all of the gene-related features from chromosome I of _A. thaliana_. We want to play around with some of this data, but don't need all of the file...just 10,000 lines will do (rather than the ~500,000 lines in the original). We will create a new (smaller) file that contains a subset of the original:
 
 	$ head -n 10000 At_genes.gff > At_genes_subset.gff 
 	$ ls -l 
@@ -249,7 +251,7 @@ In this example, we combine three separate Unix commands together in one go. Let
 
 1. The `cut` command first takes the At_genes_subset.gff file and 'cuts' out just the 3rd column (as specified by the `-f` option). Luckily, the default behavior for the `cut` command is to split text files into columns based on tab characters (if the columns were separated by another character such as a comma then we would need to use another command line option to specify the comma). 
 2. The `sort` command takes the output of the cut command and sorts it alphanumerically.
-3. The `uniq` command (in its default format) only keeps lines which are unique to the output (otherwise you would see thousands of fields which said 'curated', 'Coding_transcript' etc.)
+3. The `uniq` command (in its default format) only keeps lines that are unique to the output (otherwise you would see thousands of fields which said 'curated', 'Coding_transcript' etc.)
 
 Now let's imagine that you might want to find which features start earliest in the chromosome sequence. The start coordinate of features is always specified by column 4 of the GFF file, so:
 
@@ -266,26 +268,25 @@ Now let's imagine that you might want to find which features start earliest in t
 	exon	3996 
 	CDS	4486
 
-Here we first cut out just two columns of interest (3 & 4) from the GFF file. The `-f` option of the `cut` command lets us specify which columns we want to remove. The output is then sorted with the `sort` command. By default, `sort` will sort alphanumerically, rather than numerically, so we use the `-n` option to specify that we want to sort numerically. We have two columns of output at this point and we could sort based on either column. The `-k 2` specifies that we use the second column. Finally, we use the `head` command to get just the 10 rows of output. These should be lines from the GFF file that have the lowest starting coordinate.
+Here we first cut out just two columns of interest (3 & 4) from the GFF file. The `-f` option of the `cut` command lets us specify which columns we want to remove. The output is then sorted with the `sort` command. By default, `sort` will sort alphanumerically, rather than numerically, so we use the `-n` option to specify that we want to sort numerically. We have two columns of output at this point and we could sort based on either column. The `-k 2` specifies that we use the second column. Finally, we use the `head` command to get just the first 10 rows of output. These should be lines from the GFF file that have the lowest starting coordinate.
 
 ---
 
 ## U44: The end of the line
 
-When you press the return/enter key on your keyboard you may think that this causes the same effect no matter what computer you are using. The visible effects of hitting this key are indeed the same...if you are in a word processor or text editor, then your cursor will move down one line. However, behind the scenes pressing enter will generate one of two different events (depending on what computer you are using). Technically speaking, pressing enter generates a newline character which is represented internally by either a _line feed or carriage return_ character (actually, Windows uses a combination of both to represent a newline). If this is all sounding confusing, well it is, and it is even more complex than we are revealing here.
+When you press the return/enter key on your keyboard you may think that this causes the same effect no matter what computer you are using. The visible effects of hitting this key are indeed the same...if you are in a word processor or text editor, then your cursor will move down one line. However, behind the scenes pressing enter will generate one of two different events (depending on what computer you are using). Technically speaking, pressing enter generates a newline character, which is represented internally by either a _line feed_ or _carriage return_ character (actually, Windows uses a combination of both to represent a newline). If this is all sounding confusing, well it is, and it is even more complex than we are revealing here.
 
-The relevance of this to Unix is that you will sometimes receive a text file from someone else which looks fine on their computer, but looks unreadable in the Unix text viewer that you are using. In Unix (and in Perl and other programming languages) the patterns  `\n` and `\r` can both be used to denote newlines. A common fix for this requires substituting `\r` for `\n`.
+The relevance of this to Unix is that you will sometimes receive a text file from someone else which looks fine on their computer, but looks unreadable in the Unix text viewer that you are using. In Unix (and other programming languages) the patterns  `\n` and `\r` can both be used to denote newlines. A common fix for this requires substituting `\r` for `\n`.
 
-Use `less` to look at the Data/Misc/excel_data.csv file. This is a simple 4-line file that was exported from a Mac version of Microsoft Excel. You should see that if you use `less`, then this appears as one line with the newlines replaced with ^M characters. You can convert these carriage returns into Unix-friendly line-feed characters by using the tr command like so:
+Copy the excel_data.csv file from our shared data folder to your my_data folder, then use `less` to look at the file. This is a simple 4-line file that was exported from a Mac version of Microsoft Excel. You should see that if you use `less`, then this appears as one line with the newlines replaced with ^M characters. You can convert these carriage returns into Unix-friendly line-feed characters by using the tr command like so:
 
-	$ cd Data/Misc 
 	$ tr '\r' '\n' < excel_data.csv 
 	sequence 1,acacagagag 
 	sequence 2,acacaggggaaa 
 	sequence 3,ttcacagaga 
 	sequence 4,cacaccaaacac
 
-This will convert the characters but not save the resulting output, if you wanted to send this output to a new file you will have to use a second redirect operator:
+This will convert the characters but not save the resulting output. If you want to send this output to a new file you will have to use a second redirect operator:
 
 	$ tr '\r' '\n' < excel_data.csv > excel_data_formatted.csv
 
@@ -302,7 +303,7 @@ Finally, let's parse the Arabidopsis `intron_IME_data.fasta` file to see if we c
 
 Let's say that we want to extract five sequences from this file that are: a) from first introns, b) in the 5' UTR, and c) closest to the TSS. Therefore we will need to look for FASTA headers that contain the text 'i1' (first intron) and also the text '5UTR'.
 
-We can use `grep` to find header lines that match these terms, but this will not let us extract the associated sequences. The distance to the TSS is the number in the FASTA header which comes after the intron position. So we want to find the five introns which have the lowest values.
+We can use `grep` to find header lines that match these terms, but this will not let us extract the associated sequences. The distance to the TSS is the number in the FASTA header that comes after the intron position. So we want to find the five introns which have the lowest values.
 
 Before I show you one way of doing this in Unix, think for a moment how you would go about this if you didn't know any Unix...would it even be something you could do without manually going through a text file and selecting each sequence by eye? Note that this Unix command is so long that --- depending on how you are viewing this document --- it may appear to wrap across two lines. When you type this, it should all be on a single line:
 
