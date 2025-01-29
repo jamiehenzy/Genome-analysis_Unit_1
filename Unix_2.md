@@ -154,8 +154,8 @@ Try viewing a DNA sequence file (chr1.fasta or the introns file) with `less` and
 
 We have seen that these sequence files contain upper-case characters. What if we wanted to turn them into lower-case
 characters (because maybe another bioinformatics program will only work if they are lower-case)? The Unix command `tr`
-(short for transliterate) does just this -- it takes one range of characters that you specify and changes them into
-another range of characters:
+(short for transliterate) does just this – it takes one range of characters that you specify and changes them into
+another range of characters (make sure you're working with your own copy of `chr1.fasta`):
 
 	$ head -n 2 chr1.fasta
 
