@@ -1,5 +1,5 @@
 # Getting started with Bowtie 2: Lambda phage example
-Bowtie 2 is available as a module on Explorer. The files you will be working with are the lambda phage genome, a set of paired-end reads, and a set of long reads available here (if you have not previously downloaded them). In this exercise, adapted from the Bowtie2 Manual, you will learn to index a genome and align the reads to it using a simple phage genome to start.
+Bowtie 2 is available as a module on Explorer. The files you will be working with are the lambda phage genome, a set of paired-end reads, and a set of long reads available here (if you have not previously downloaded them). In this exercise, adapted from the [Bowtie2 Manual](https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml), you will learn to index a genome and align the reads to it using a simple phage genome to start.
 
 For this exercise, have your lambda sequences in one directory. In that same directory, make a new temporary directory. Remember to request a computing node, and load the bowtie2 module.
 
@@ -37,41 +37,39 @@ r6  16  gi|9626243|ref|NC_001416.1| 41607   42  72M2D119M   *   0   0   TCGATTTG
 r7  16  gi|9626243|ref|NC_001416.1| 4692    42  143M    *   0   0   TCAGCCGGACGCGGGCGCTGCAGCCGTACTCGGGGATGACCGGTTACAACGGCATTATCGCCCGTCTGCAACAGGCTGCCAGCGATCCGATGGTGGACAGCATTCTGCTCGATATGGACANGCCCGGCGGGATGGTGGCGGGG -"/@*7A0)>2,AAH@&"%B)*5*23B/,)90.B@%=FE,E063C9?,:26$-0:,.,1849'4.;F>FA;76+5&$<C":$!A*,<B,<)@<'85D%C*:)30@85;?.B$05=@95DCDH<53!8G:F:B7/A.E':434> AS:i:-6 XN:i:0  XM:i:2  XO:i:0  XG:i:0  NM:i:2  MD:Z:98G21C22   YT:Z:UU
 The first few lines (beginning with @) are SAM header lines, and the rest of the lines are SAM alignments, one line per read or mate. See the Bowtie 2 manual section on SAM output and the SAM specification for details about how to interpret the SAM file format.
 
-Paired-end example
+### Paired-end example
 To align paired-end reads included with Bowtie 2, stay in the same directory and run:
 
-bowtie2 -x lambda_virus -1 ../reads_1.fq -2 ../reads_2.fq -S eg2.sam
+`bowtie2 -x lambda_virus -1 ../reads_1.fq -2 ../reads_2.fq -S eg2.sam`
 
 This aligns a set of paired-end reads to the reference genome, with results written to the file eg2.sam. If you had used the filename eg1.sam here, your new results would have overwritten your previous results, so be careful!
 
-Local alignment example
+### Local alignment example
 To use local alignment to align some longer reads included with Bowtie 2, stay in the same directory and run:
 
-bowtie2 --local -x lambda_virus -U ../longreads.fq -S eg3.sam
+`bowtie2 --local -x lambda_virus -U ../longreads.fq -S eg3.sam`
 
 This aligns the long reads to the reference genome using local alignment, with results written to the file eg3.sam.
 
-Using SAMtools/BCFtools downstream
+### Using SAMtools/BCFtools downstream
 SAMtools is a collection of tools for manipulating and analyzing SAM and BAM alignment files. BCFtools is a collection of tools for calling variants and manipulating VCF and BCF files, and it is typically distributed with SAMtools. Both of these programs are available as module in Explorer. Using these tools together allows you to get from alignments in SAM format to variant calls in VCF format. Load the modules for samtools and bcftools into your environment (keeping bowtie2 active, as well) before proceeding.
 
 Use samtools view to convert the SAM file for the paired-end alignment you performed into a BAM file. BAM is the binary format corresponding to the SAM text format. Run:
 
-samtools view -bS eg2.sam > eg2.bam
+`samtools view -bS eg2.sam > eg2.bam`
 
 Nothing will print to the console but you'll see a new file ending in .bam in your directory.
 
 Use samtools sort to convert the BAM file to a sorted BAM file that can be used for calling variants.
 
-samtools sort eg2.bam -o eg2.sorted.bam
+`samtools sort eg2.bam -o eg2.sorted.bam`
 
 We now have a sorted BAM file called eg2.sorted.bam. Sorted BAM is a useful format because the alignments are (a) compressed, which is convenient for long-term storage, and (b) sorted, which is conveneint for variant discovery. To generate variant calls in a format known as VCF, run:
 
-bcftools mpileup -f ../lambda_virus.fa eg2.sorted.bam | bcftools view -Ov - > eg2.raw.bcf
+`bcftools mpileup -f ../lambda_virus.fa eg2.sorted.bam | bcftools view -Ov - > eg2.raw.bcf`
 
 Then to view the variants, run the command below, directing output to a file that you can name whatever you want:
 
-bcftools view eg2.raw.bcf > variants.txt
+`bcftools view eg2.raw.bcf > variants.txt`
 
 View the file!
-
-See the official SAMtools guide to Calling SNPs/INDELs with SAMtools/BCFtools for more details and variations on this process.
