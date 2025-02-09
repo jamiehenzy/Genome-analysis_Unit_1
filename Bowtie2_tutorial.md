@@ -3,29 +3,29 @@ Bowtie 2 is available as a module on Explorer. The files you will be working wit
 
 For this exercise, have your lambda sequences in one directory. In that same directory, make a new temporary directory. Remember to request a computing node, and load the bowtie2 module.
 
-Indexing a reference genome
+### Indexing a reference genome
 Change into the temporary directory you made and run:
 
-bowtie2-build ../lambda_virus.fa lambda_virus
+`bowtie2-build ../lambda_virus.fa lambda_virus`
 
 The command should print many lines of output then quit. When the command completes, the current directory will contain six new files that all start with lambda_virus and end with .1.bt2, .2.bt2, .3.bt2, .4.bt2, .rev.1.bt2, and .rev.2.bt2. These files constitute the index - you're done!
 
 You can use bowtie2-build to create an index for a set of FASTA files obtained from any source, including sites such as UCSC, NCBI, and Ensembl. When indexing multiple FASTA files, specify all the files using commas to separate file names. For more details on how to create an index with bowtie2-build, see the manual section on index building. You may also want to bypass this process by obtaining a pre-built index. See using a pre-built index below for an example.
 
-Aligning example reads
+### Aligning example reads
 Stay in the directory created in the previous step, which now contains the lambda_virus index files. Next, run:
 
-bowtie2 -x lambda_virus -U ../reads_1.fq -S eg1.sam
+`bowtie2 -x lambda_virus -U ../reads_1.fq -S eg1.sam`
 
 This runs the Bowtie 2 aligner, which aligns a set of unpaired reads to the Lambda phage reference genome using the index generated in the previous step. The alignment results in SAM format are written to the file eg1.sam, and a short alignment summary is written to the console. (Actually, the summary is written to the "standard error" or "stderr" filehandle, which is typically printed to the console.)
 
 To see the first few lines of the SAM output, run:
 
-head eg1.sam
+`head eg1.sam`
 
 You will see something like this:
 
-@HD VN:1.0  SO:unsorted
+> @HD VN:1.0  SO:unsorted
 @SQ SN:gi|9626243|ref|NC_001416.1|  LN:48502
 @PG ID:bowtie2  PN:bowtie2  VN:2.0.1
 r1  0   gi|9626243|ref|NC_001416.1| 18401   42  122M    *   0   0   TGAATGCGAACTCCGGGACGCTCAGTAATGTGACGATAGCTGAAAACTGTACGATAAACNGTACGCTGAGGGCAGAAAAAATCGTCGGGGACATTNTAAAGGCGGCGAGCGCGGCTTTTCCG  +"@6<:27(F&5)9"B):%B+A-%5A?2$HCB0B+0=D<7E/<.03#!.F77@6B==?C"7>;))%;,3-$.A06+<-1/@@?,26">=?*@'0;$:;??G+:#+(A?9+10!8!?()?7C>  AS:i:-5 XN:i:0  XM:i:3  XO:i:0  XG:i:0  NM:i:3  MD:Z:59G13G21G26    YT:Z:UU
