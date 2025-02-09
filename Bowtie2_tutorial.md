@@ -1,4 +1,4 @@
-Getting started with Bowtie 2: Lambda phage example
+# Getting started with Bowtie 2: Lambda phage example
 Bowtie 2 is available as a module on Explorer. The files you will be working with are the lambda phage genome, a set of paired-end reads, and a set of long reads available here (if you have not previously downloaded them). In this exercise, adapted from the Bowtie2 Manual, you will learn to index a genome and align the reads to it using a simple phage genome to start.
 
 For this exercise, have your lambda sequences in one directory. In that same directory, make a new temporary directory. Remember to request a computing node, and load the bowtie2 module.
